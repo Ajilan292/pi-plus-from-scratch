@@ -1,0 +1,80 @@
+site_name: PI Plus From Scratch (ROS1)
+site_description: From-scratch manual for PI Plus based on ROS1
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - content.code.copy
+    - toc.follow
+    - search.suggest
+    - search.highlight
+
+plugins:
+  - search
+  - awesome-pages
+  - git-revision-date-localized:
+      type: date
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+
+nav:
+  - Home: index.md
+  - Overview:
+      - Overview: overview/index.md
+      - Features: overview/features.md
+      - Resources: overview/resources.md
+  - Setup:
+      - Setup: setup/index.md
+      - Basic Setup: setup/basic.md
+      - Networking: setup/networking.md
+      - ROS1 Discovery: setup/discovery_ros1.md
+      - First Boot Checklist: setup/first_boot_checklist.md
+  - Software:
+      - Software: software/index.md
+      - Overview: software/overview.md
+      - Packages: software/packages.md
+      - Launch Matrix: software/launch_matrix.md
+      - ROS API Reference: software/ros_api_reference.md
+      - Config System: software/config_system.md
+      - RViz Visualization: software/visualization_rviz.md
+      - Simulation: software/simulation.md
+  - Mechanical:
+      - Mechanical: mechanical/index.md
+      - Structure: mechanical/structure.md
+      - Extendability: mechanical/extendability.md
+  - Electrical:
+      - Electrical: electrical/index.md
+      - Power & Battery: electrical/power_battery.md
+      - Compute & IO: electrical/compute_io.md
+      - Power Budget: electrical/power_budget.md
+  - Tutorials:
+      - Tutorials: tutorials/index.md
+      - Teleop: tutorials/teleop.md
+      - First Demo: tutorials/first_demo.md
+      - Add Motion: tutorials/add_motion.md
+      - Web Bridge: tutorials/web_bridge.md
+      - Multi Robot (ROS1): tutorials/multi_robot_ros1.md
+      - Backup & Restore: tutorials/backup_restore.md
+  - Troubleshooting:
+      - Troubleshooting: troubleshooting/index.md
+      - Diagnostics: troubleshooting/diagnostics.md
+      - ROS Tests: troubleshooting/ros_tests.md
+      - FAQ: troubleshooting/faq.md
+      - Recovery: troubleshooting/recovery.md
+  - Changelogs:
+      - Changelogs: changelogs/index.md
+      - Releases: changelogs/releases.md
