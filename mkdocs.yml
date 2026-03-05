@@ -1,3 +1,8 @@
+site_url: https://ajilan292.github.io/pi-plus-from-scratch/
+repo_url: https://github.com/Ajilan292/pi-plus-from-scratch
+repo_name: Ajilan292/pi-plus-from-scratch
+edit_uri: edit/main/docs/
+
 site_name: PI Plus From Scratch (ROS1)
 site_description: From-scratch manual for PI Plus based on ROS1
 
