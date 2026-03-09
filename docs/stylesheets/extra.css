@@ -214,3 +214,78 @@
 }
 .cta-title{ font-weight: 900; }
 .cta-desc{ color: var(--md-default-fg-color--light); font-size: 14px; }
+
+/* Hide the invisible long "Back to top" overlay button */
+button[aria-label="回到页面顶部"] {
+  display: none !important;
+}
+
+/* =========================
+   Fix sidebar white band: md-nav__title sticky background/shadow
+   ========================= */
+.md-nav--primary .md-nav__title {
+  position: static !important;                 /* cancel sticky */
+  top: auto !important;
+  z-index: auto !important;
+  background: transparent !important;          /* no white background */
+  box-shadow: none !important;                 /* remove fade shadow */
+}
+
+/* Optional: title text style (keep readable on dark sidebar) */
+.md-sidebar--primary .md-nav__title {
+  color: rgba(255,255,255,.92) !important;
+}
+
+/* =========================
+   Fix sidebar white band: md-nav__title sticky background/shadow
+   ========================= */
+.md-nav--primary .md-nav__title {
+  position: static !important;                 /* cancel sticky */
+  top: auto !important;
+  z-index: auto !important;
+  background: transparent !important;          /* no white background */
+  box-shadow: none !important;                 /* remove fade shadow */
+}
+
+/* Optional: title text style (keep readable on dark sidebar) */
+.md-sidebar--primary .md-nav__title {
+  color: rgba(255,255,255,.92) !important;
+}
+
+/* =========================
+   Responsive fix: sidebar on narrow screens (drawer) turns white
+   ========================= */
+
+/* Desktop sidebar styling (keep dark) */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary .md-sidebar__scrollwrap,
+  .md-sidebar--primary .md-sidebar__inner,
+  .md-sidebar--primary .md-nav {
+    background: #1f232a !important;
+  }
+  .md-sidebar--primary,
+  .md-sidebar--primary .md-nav__title,
+  .md-sidebar--primary .md-nav__link,
+  .md-sidebar--primary .md-nav__item {
+    color: rgba(255,255,255,.86) !important;
+  }
+}
+
+/* Mobile / narrow drawer styling: force drawer background to dark too */
+@media screen and (max-width: 76.25em) {
+  /* The drawer container */
+  .md-sidebar--primary {
+    background: #1f232a !important;
+  }
+  .md-sidebar--primary .md-sidebar__scrollwrap,
+  .md-sidebar--primary .md-sidebar__inner,
+  .md-sidebar--primary .md-nav {
+    background: #1f232a !important;
+  }
+  .md-sidebar--primary,
+  .md-sidebar--primary .md-nav__title,
+  .md-sidebar--primary .md-nav__link,
+  .md-sidebar--primary .md-nav__item {
+    color: rgba(255,255,255,.86) !important;
+  }
+}

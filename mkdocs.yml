@@ -10,13 +10,12 @@ theme:
   language: zh
   palette:
     - scheme: default
-      primary: black
+      primary: indigo
       accent: indigo
   features:
-    - navigation.tabs
+    # 不要顶部 tabs（关键）
     - navigation.sections
     - navigation.indexes
-    - navigation.top
     - content.code.copy
     - toc.follow
     - search.suggest
