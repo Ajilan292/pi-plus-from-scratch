@@ -1,0 +1,70 @@
+site_name: PI Plus From Scratch
+site_description: Complete guide for learning PI Plus robot from scratch
+site_url: http://127.0.0.1:8082/pi-plus-from-scratch/
+repo_url: https://github.com/Ajilan292/pi-plus-from-scratch
+repo_name: Ajilan292/pi-plus-from-scratch
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+  features:
+    # 不要顶部 tabs（关键）
+    - navigation.sections
+    - navigation.indexes
+    - content.code.copy
+    - toc.follow
+    - search.suggest
+    - search.highlight
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+  - javascripts/extra.js
+
+nav:
+  - Home: index.md
+  - Get Started: get-started.md
+
+  - Tutorials:
+      - Intro: tutorials/intro/index.md
+      - Setup: tutorials/setup/index.md
+      - First Run: tutorials/first-run/index.md
+      - Safety & Teleoperation: tutorials/safety-and-teleop/index.md
+      - Bringup: tutorials/bringup/index.md
+      - Simulation Basics: tutorials/sim-basics/index.md
+      - Sim2Real Deployment: tutorials/sim2real-deploy/index.md
+      - Troubleshooting: tutorials/troubleshooting/index.md
+
+  - Reference:
+      - Hardware: reference/hardware/index.md
+      - Software: reference/software/index.md
+      - Interfaces: reference/interfaces/index.md
+      - Configuration: reference/configuration/index.md
+
+  - Explanation:
+      - System Architecture: explanation/system-architecture.md
+      - Control Stack: explanation/control-stack.md
+      - Sim2Real Theory: explanation/sim2real.md
+      - Design Principles: explanation/design-principles.md
+
+  - Changelogs:
+      - Releases: changelogs/releases.md
