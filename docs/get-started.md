@@ -1,167 +1,112 @@
-# PI Plus Documentation
+# Get Started
 
-Welcome to the PI Plus documentation. PI Plus is a humanoid robot platform designed for research, education, and development of embodied intelligence systems.
+This guide helps you bring up the PI Plus robot from scratch.
 
-This documentation helps you:
+By following this page, you will:
 
-- Understand the system architecture
-- Set up and run the robot
-- Develop and deploy control policies
-- Troubleshoot and optimize performance
-
----
-
-## What is PI Plus
-
-PI Plus is not just a robot. It is a **complete development platform** that integrates:
-
-- Hardware (robot body, actuators, sensors)
-- Control system (low-level control and execution)
-- Software stack (ROS-based system)
-- Simulation environment
-- Learning and deployment pipeline
-
-The goal is to enable users to go from:
-
-> Zero setup → Running robot → Training → Deployment
+- Power on the robot
+- Understand hardware interfaces
+- Complete zero calibration
+- Get the robot ready for operation
 
 ---
 
-## Who is this for
+## 1. Pre-check
 
-This documentation is designed for:
+Before starting, make sure:
 
-### Students
-- Learning robotics and embodied AI
-- Running experiments and projects
-- Understanding control and simulation
-
-### Researchers
-- Developing new algorithms
-- Testing sim-to-real pipelines
-- Customizing robot behavior
-
-### Developers
-- Integrating systems
-- Building applications
-- Extending platform capabilities
+- The robot is placed on a stable and flat surface
+- No obstacles are nearby
+- Battery is properly installed
+- All cables are securely connected
 
 ---
 
-## Documentation Structure
+## 2. Hardware Overview
 
-This documentation follows a structured approach:
+Familiarize yourself with the back panel before powering on:
 
-### Tutorials (From Scratch)
-Step-by-step guides to help you:
-- Set up the environment
-- Bring up the robot
-- Run basic demos
-- Train and deploy policies
+![Back Panel Guide](images/hardware/back_panel_operation_guide.png)
 
-👉 Start here if you are new
+Refer to the status indicators:
+
+![Status Reference](images/hardware/back_panel_status_reference.png)
 
 ---
 
-### Explanation
-Conceptual explanations of:
-- System architecture
-- Control system
-- Sim-to-real pipeline
+## 3. Power On the Robot
 
-👉 Read this to understand how things work
+Follow the boot process step by step:
 
----
+### Step 1 – Power On
+![Step 1](images/bringup/boot_process_step_1.png)
 
-### Reference
-Detailed technical information:
-- Hardware
-- Software components
-- Interfaces
-- Configuration
+### Step 2 – System Initialization
+![Step 2](images/bringup/boot_process_step_2.png)
 
-👉 Use this when you need precise details
+### Step 3 – Controller Ready
+![Step 3](images/bringup/boot_process_step_3.png)
+
+### Step 4 – Robot Ready
+![Step 4](images/bringup/boot_process_step_4.png)
 
 ---
 
-## Getting Started
+## 4. Zero Calibration (Critical)
 
-If you are new, follow this path:
+Before any operation, you must complete zero calibration.
 
-1. Setup environment
-2. Connect to the robot
-3. Run bringup
-4. Execute basic motion
-5. Explore simulation
-6. Deploy your first policy
+This step ensures all joints are aligned correctly.
 
-👉 Go to: `tutorials/`
+### Step 1
+![Step 1](images/posture/zero_calibration_step_1.png)
 
----
+### Step 2
+![Step 2](images/posture/zero_calibration_step_2.png)
 
-## Key Features
+### Step 3
+![Step 3](images/posture/zero_calibration_step_3.png)
 
-### Integrated System
-Everything is designed to work together:
-- Hardware + Control + Software + Simulation
+### Step 4
+![Step 4](images/posture/zero_calibration_step_4.png)
 
----
-
-### Sim-to-Real Pipeline
-Train in simulation and deploy to real robot.
+### Step 5
+![Step 5](images/posture/zero_calibration_step_5.png)
 
 ---
 
-### Modular Design
-Each component can be:
-- Replaced
-- Modified
-- Extended
+## 5. Safety Notice
+
+Before enabling control:
+
+- Ensure the robot is in a safe posture
+- Keep distance from moving joints
+- Be ready to stop the robot if needed
+
+Refer to posture guidelines:
+
+![Robot Posture](images/posture/robot_posture_overview.png)
 
 ---
 
-### Education-Friendly
-- Structured tutorials
-- Clear abstractions
-- Reproducible workflows
+## 6. Next Steps
 
----
+Once the robot is ready:
 
-## Typical Workflow
+👉 Continue with:
 
-A typical user workflow looks like:
-
-Setup → Bringup → Teleoperation → Simulation → Training → Deployment
-
----
-
-## Safety Notice
-
-Before operating the robot:
-
-- Ensure proper power setup
-- Keep safe distance
-- Start with conservative parameters
-- Always monitor behavior
-
----
-
-## Contributing
-
-We welcome contributions:
-
-- Documentation improvements
-- Bug reports
-- Feature suggestions
+- [First Run](tutorials/first-run/index.md)
+- [Teleoperation](tutorials/safety-and-teleop/index.md)
+- [Bringup System](tutorials/bringup/index.md)
 
 ---
 
 ## Summary
 
-PI Plus provides a complete platform for:
+You have completed:
 
-- Learning robotics
-- Developing embodied intelligence
-- Bridging simulation and real-world deployment
+- Hardware check
+- Power-on sequence
+- Zero calibration
 
-Start from tutorials and gradually explore deeper sections.
+The robot is now ready for operation.
