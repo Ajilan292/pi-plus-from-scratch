@@ -6,6 +6,7 @@ This section describes the overall system architecture of the platform, includin
 
 ## Overview
 
+![System Architecture](../images/system/system_architecture.png)
 The platform is composed of multiple layers that work together to enable perception, decision-making, and control. At a high level, the system can be divided into:
 
 - High-level decision layer

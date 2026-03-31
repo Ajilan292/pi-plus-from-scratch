@@ -30,6 +30,25 @@ Emergency stop should always be the first response to unsafe conditions.
 
 ---
 
+## Zero Calibration Procedure
+
+### Step 1
+![Step1](../../images/posture/zero_position_correct.png)
+
+### Step 2
+![Step2](../../images/posture/zero_calibration_step_2.png)
+
+### Step 3
+![Step3](../../images/posture/zero_calibration_step_3.png)
+
+### Step 4
+![Step4](../../images/posture/zero_calibration_step_4.png)
+
+### Step 5
+![Step5](../../images/posture/zero_calibration_step_5.png)
+
+---
+
 ## Teleoperation Overview
 
 The system supports teleoperation through external input devices such as controllers. Teleoperation allows the user to:

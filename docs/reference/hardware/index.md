@@ -86,6 +86,12 @@ These interfaces enable interaction between system components.
 
 ---
 
+## Back Panel Overview
+
+![Back Panel](../../images/hardware/back_panel_overview.png)
+
+---
+
 ## Power System
 
 The power system supplies energy to all hardware components. Key considerations:
@@ -95,6 +101,12 @@ The power system supplies energy to all hardware components. Key considerations:
 - Improper power usage may damage the system
 
 Power handling must follow safety guidelines.
+
+---
+
+## Battery Module
+
+![Battery](../../images/hardware/battery_module.png)
 
 ---
 

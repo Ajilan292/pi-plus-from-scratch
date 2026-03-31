@@ -17,6 +17,13 @@ Do not power on the system if any connection is incomplete.
 
 ---
 
+## Hardware Interface Overview
+
+![Back Panel Guide](../../images/hardware/back_panel_operation_guide.png)
+![Status Reference](../../images/hardware/back_panel_status_reference.png)
+
+---
+
 ## System Initialization
 
 After powering on, the system will begin its initialization process. During this stage:
@@ -38,6 +45,22 @@ After the system has started, check whether it is operating normally. Verify the
 - All modules appear to function normally
 
 If any abnormal condition is observed, immediately stop the system and inspect the setup.
+
+---
+
+## Boot Process
+
+### Step 1: Power On
+![Step1](../../images/bringup/boot_process_step_1.png)
+
+### Step 2: System Initialization
+![Step2](../../images/bringup/boot_process_step_2.png)
+
+### Step 3: Controller Ready
+![Step3](../../images/bringup/boot_process_step_3.png)
+
+### Step 4: Robot Ready
+![Step4](../../images/bringup/boot_process_step_4.png)
 
 ---
 
