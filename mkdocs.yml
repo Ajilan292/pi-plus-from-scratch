@@ -46,8 +46,8 @@ nav:
 
   - Tutorials:
       - Intro: tutorials/intro/index.md
-      - Setup: tutorials/setup/index.md
       - First Run: tutorials/first-run/index.md
+      - Setup: tutorials/setup/index.md
       - Safety & Teleoperation: tutorials/safety-and-teleop/index.md
       - Bringup: tutorials/bringup/index.md
       - Simulation Basics: tutorials/sim-basics/index.md

@@ -302,26 +302,26 @@ mkdir -p ~/your_name/policy
 
 ### System-Level Checks
 
-- [ ] SSH connection to the robot works
-- [ ] Network access is available if required
-- [ ] Miniconda is installed
-- [ ] ROS2 Foxy is installed
-- [ ] `rosenv foxy` works correctly
+- SSH connection to the robot works
+- Network access is available if required
+- Miniconda is installed
+- ROS2 Foxy is installed
+- `rosenv foxy` works correctly
 
 ### Workspace Checks
 
-- [ ] ROS2 workspace is created
-- [ ] Workspace builds successfully with `colcon build`
-- [ ] `source install/setup.bash` works correctly
+- ROS2 workspace is created
+- Workspace builds successfully with `colcon build`
+- `source install/setup.bash` works correctly
 
 ### Onboard Runtime Checks
 
-- [ ] instinct_onboard is present on the robot
-- [ ] ros2_numpy is available under the project directory
-- [ ] instinct_venv Conda environment is created
-- [ ] ONNX Runtime GPU wheel is installed
-- [ ] `pip install -e .` completes successfully
-- [ ] Policy files are uploaded to the policy directory
+- instinct_onboard is present on the robot
+- ros2_numpy is available under the project directory
+- instinct_venv Conda environment is created
+- ONNX Runtime GPU wheel is installed
+- `pip install -e .` completes successfully
+- Policy files are uploaded to the policy directory
 
 ---
 
