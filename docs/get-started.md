@@ -1,112 +1,95 @@
 # Get Started
 
-This guide helps you bring up the PI Plus robot from scratch.
+![PI Plus Robot](images/system/pi_plus_overview.png)
 
-By following this page, you will:
+Welcome to the PI Plus documentation.
 
-- Power on the robot
-- Understand hardware interfaces
-- Complete zero calibration
-- Get the robot ready for operation
+This page helps you understand the system and guides you to the appropriate starting point.
 
 ---
 
-## 1. Pre-check
+## What is PI Plus
 
-Before starting, make sure:
+PI Plus is a humanoid robot platform designed for research, development, and education.
 
-- The robot is placed on a stable and flat surface
-- No obstacles are nearby
-- Battery is properly installed
-- All cables are securely connected
+It provides:
 
----
-
-## 2. Hardware Overview
-
-Familiarize yourself with the back panel before powering on:
-
-![Back Panel Guide](images/hardware/back_panel_operation_guide.png)
-
-Refer to the status indicators:
-
-![Status Reference](images/hardware/back_panel_status_reference.png)
+- A complete hardware system  
+- A standardized control interface  
+- Support for simulation and real-world deployment  
 
 ---
 
-## 3. Power On the Robot
+## Before You Start
 
-Follow the boot process step by step:
+Make sure:
 
-### Step 1 – Power On
-![Step 1](images/bringup/boot_process_step_1.png)
-
-### Step 2 – System Initialization
-![Step 2](images/bringup/boot_process_step_2.png)
-
-### Step 3 – Controller Ready
-![Step 3](images/bringup/boot_process_step_3.png)
-
-### Step 4 – Robot Ready
-![Step 4](images/bringup/boot_process_step_4.png)
+- The robot is placed on a stable surface  
+- The battery is installed correctly  
+- The environment is clear of obstacles  
 
 ---
 
-## 4. Zero Calibration (Critical)
+## Choose Your Path
 
-Before any operation, you must complete zero calibration.
-
-This step ensures all joints are aligned correctly.
-
-### Step 1 – Initial Position
-![Initial Position](images/posture/zero_position_correct.png)
-
-### Step 2
-![Step 2](images/posture/zero_calibration_step_2.png)
-
-### Step 3
-![Step 3](images/posture/zero_calibration_step_3.png)
-
-### Step 4
-![Step 4](images/posture/zero_calibration_step_4.png)
-
-### Step 5
-![Step 5](images/posture/zero_calibration_step_5.png)
+Depending on your goal, start from one of the following sections:
 
 ---
 
-## 5. Safety Notice
+### 🚀 First Run
 
-Before enabling control:
+Get the robot up and running for the first time:
 
-- Ensure the robot is in a safe posture
-- Keep distance from moving joints
-- Be ready to stop the robot if needed
+- Power on the robot  
+- Bring up the system  
+- Make the robot stand and move  
 
-Refer to posture guidelines:
-
-![Robot Posture](images/posture/robot_posture_overview.png)
+👉 [Go to First Run](tutorials/first-run/index.md)
 
 ---
 
-## 6. Next Steps
+### 🎮 Teleoperation
 
-Once the robot is ready:
+Learn how to control the robot using a controller:
 
-👉 Continue with:
+- Controller layout  
+- Movement control  
+- Mode switching  
 
-- [First Run](tutorials/first-run/index.md)
-- [Teleoperation](tutorials/safety-and-teleop/index.md)
-- [Bringup System](tutorials/bringup/index.md)
+👉 [Go to Teleoperation](tutorials/safety-and-teleop/index.md)
+
+---
+
+### ⚙️ Bringup System
+
+Understand how the system is initialized:
+
+- System architecture  
+- Core runtime nodes  
+- Configuration structure  
+
+👉 [Go to Bringup](tutorials/bringup/index.md)
+
+---
+
+### 🔒 Safety Guidelines
+
+Understand safe operation principles:
+
+- Safety rules  
+- Emergency stop  
+- Operating precautions  
+
+👉 [Go to Safety](tutorials/safety-and-teleop/index.md)
 
 ---
 
 ## Summary
 
-You have completed:
+PI Plus documentation is organized into:
 
-- Hardware check
-- Power-on sequence
-- Zero calibration
+- **Tutorials** → Step-by-step operation  
+- **Reference** → System details and parameters  
+- **Explanation** → Design concepts  
 
-The robot is now ready for operation.
+Start with *First Run* to quickly experience the system.
