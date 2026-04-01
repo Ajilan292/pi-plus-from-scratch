@@ -58,8 +58,8 @@ Before any operation, you must complete zero calibration.
 
 This step ensures all joints are aligned correctly.
 
-### Step 1
-![Step 1](images/posture/zero_calibration_step_1.png)
+### Step 1 – Initial Position
+![Initial Position](images/posture/zero_position_correct.png)
 
 ### Step 2
 ![Step 2](images/posture/zero_calibration_step_2.png)
