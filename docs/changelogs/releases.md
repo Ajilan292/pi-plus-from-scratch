@@ -1,91 +1,127 @@
-# 版本更新记录
+# Release Notes
 
-PI Plus From Scratch 文档项目的版本更新记录。
+## Overview
 
-## 版本 1.0.0 (2026-03-27)
+This document records the release history, major updates, improvements, and known issues of the PI Plus platform.
 
-### 新增功能
-- ✅ 创建完整的项目目录结构
-- ✅ 搭建教程系统框架
-- ✅ 添加产品手册内容到教程系统
-- ✅ 创建操作指南框架
-- ✅ 建立参考文档结构
-- ✅ 配置MkDocs网站生成
-
-### 教程系统
-- **平台认知**: 完成产品概况、硬件介绍、安全须知等内容
-- **环境搭建**: 完成开箱、位姿校对、电池安装等内容
-- **第一次运行**: 完成控制器操作、基本动作、模式切换等内容
-- **安全与操控**: 完成安全规范、危险预防、紧急处理等内容
-- **仿真基础**: 创建模块框架（内容待补充）
-- **Sim2Real部署**: 创建模块框架（内容待补充）
-- **实验课程**: 创建模块框架（内容待补充）
-
-### 文档结构
-- 建立三层文档体系：教程→操作指南→参考文档
-- 实现模块化内容组织
-- 支持渐进式学习路径
-- 提供快速查找功能
-
-### 技术特性
-- 基于MkDocs + Material主题
-- 支持中文界面和内容
-- 响应式设计，支持多设备访问
-- 内置搜索功能
-- 代码高亮支持
-
-### 已知问题
-- 部分图片资源待补充
-- 操作指南内容待完善
-- 参考文档需要更多技术细节
-- 社区功能待开发
-
-## 版本规划
-
-### 1.1.0 (计划中)
-- 完善操作指南内容
-- 补充参考文档技术细节
-- 添加更多图片资源
-- 优化文档结构和导航
-
-### 1.2.0 (计划中)
-- 添加代码示例和项目
-- 建立用户社区功能
-- 支持多语言文档
-- 添加视频教程资源
-
-### 2.0.0 (长期规划)
-- 完整的交互式教程
-- 在线实验环境
-- 用户贡献系统
-- 专业认证体系
-
-## 更新策略
-
-### 版本号规则
-- **主版本号**: 重大架构变更
-- **次版本号**: 功能增加和改进
-- **修订号**: 问题修复和小幅改进
-
-### 发布周期
-- **月度更新**: 小版本更新和问题修复
-- **季度更新**: 功能增加和内容完善
-- **年度更新**: 重大版本升级
-
-## 贡献记录
-
-### 2026-03-27
-- 项目初始版本发布
-- 感谢所有参与者的贡献
-- 特别感谢内容整理和文档编写人员
-
-## 联系方式
-
-如有问题或建议，请通过以下方式联系：
-- 项目仓库: [GitHub地址]
-- 问题反馈: [Issue跟踪]
-- 邮件联系: [联系邮箱]
+Each release follows a structured format to ensure traceability and clarity for developers and users.
 
 ---
 
-**持续改进，共同成长。** 我们致力于提供最好的机器人学习资源。
+## Versioning Scheme
+
+The platform uses a semantic versioning format:
+
+```
+MAJOR.MINOR.PATCH
+```
+
+- **MAJOR**: Breaking changes or major architectural updates  
+- **MINOR**: New features and improvements  
+- **PATCH**: Bug fixes and minor adjustments  
+
+---
+
+## [v1.0.0] - Initial Release
+
+### Highlights
+
+- First stable release of PI Plus platform  
+- Full configuration-driven architecture  
+- Joint-centric control model implemented  
+- CAN-FD based motor communication supported  
+- Basic humanoid configuration (25 DOF) supported  
+
+---
+
+### Features
+
+#### Core System
+
+- Modular system architecture (hardware → control → behavior → intelligence)
+- Configuration-driven robot definition:
+  - `robot_param.yaml`
+  - `joints.yaml`
+  - URDF integration
+- Multi-robot variant support via `robot_type`
+
+#### Control
+
+- Joint-level control interface
+- PD controller support (kp, kd configurable per joint)
+- Joint limits enforcement
+- Direction mapping and offset calibration
+
+#### Hardware Interface
+
+- CAN-FD communication support
+- Multi-CAN port architecture
+- Motor abstraction layer
+
+#### Simulation Compatibility
+
+- Consistent joint definition with URDF
+- Sim-to-real compatible joint ordering and mapping
+
+---
+
+### Improvements
+
+- Improved configuration clarity and structure
+- Unified joint naming conventions
+- Better separation between hardware and control layers
+
+---
+
+### Known Issues
+
+- No built-in state estimator (EKF/UKF not included)
+- Limited built-in debugging tools
+- Manual tuning required for gains (kp/kd)
+- Some configuration fields lack validation
+
+---
+
+### Notes
+
+- This release is designed primarily for developers and researchers
+- Not optimized for plug-and-play usage
+- Recommended to verify configuration before deployment
+
+---
+
+## Future Plans
+
+### Planned Features
+
+- State estimation module (EKF / sensor fusion)
+- Improved debugging and visualization tools
+- Auto-calibration utilities
+- Higher-level behavior APIs
+
+### Long-Term Direction
+
+- Better integration with AI agent systems (e.g., OpenClaw)
+- Improved sim-to-real transfer pipelines
+- Enhanced multi-robot scalability
+
+---
+
+## Contribution
+
+If you find issues or want to contribute:
+
+- Submit bug reports  
+- Propose improvements  
+- Contribute new modules or configurations  
+
+---
+
+## Summary
+
+This release establishes the foundation of the PI Plus platform:
+
+- Modular  
+- Configurable  
+- Extensible  
+- Ready for integration with modern robotics and AI systems  
