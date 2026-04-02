@@ -1,159 +1,223 @@
 # Hardware
 
-This section describes the hardware structure of the system, including mechanical components, actuators, sensors, and interfaces.
-
----
+![PI Plus Robot](../../images/system/pi_plus_overview.png)
 
 ## Overview
 
-The robot system consists of integrated mechanical, electrical, and control components. The hardware is designed to:
+Mini Pi+ is a 27-DOF full humanoid robot platform evolved from Mini Pi.
 
-- Provide stable and reliable actuation
-- Support real-time sensing and feedback
-- Enable seamless integration with the control system
+The system follows a modular design:
+
+- Leg modules are fully reused from Mini Pi  
+- Upper body (waist, arms, head) is added via quick-release interfaces  
+- No modification to leg control strategy or driver layer is required  
+
+This design enables rapid iteration and extensibility.
 
 ---
 
 ## Mechanical Structure
 
-The robot is composed of multiple rigid links connected through joints. Key characteristics:
+![Robot Structure](../../images/hardware/robot_structure.png)
 
-- Modular structure for easy maintenance
-- Rigid frame for stability
-- Designed for dynamic motion
+The robot consists of:
 
-Each joint provides controlled motion along a defined axis.
+- Legs (fully reused)
+- Waist (1 DOF)
+- Arms (6 DOF × 2)
+- Head (2 DOF)
+
+Key properties:
+
+- Height: ~75 cm  
+- Mass: ~13.84 kg  
+
+The modular structure enables rapid hardware extension without redesigning the core system.
 
 ---
 
 ## Actuation System
 
-The robot uses actuators to drive joint motion. Typical features include:
+![Joint Module](../../images/hardware/joint_module.png)
 
-- Precision motor control
-- Integrated drive systems
-- Support for position, velocity, or torque control
+The platform uses integrated joint modules:
 
-Actuators are controlled through the hardware interface layer.
+- HTDW-5036 (legs)
+- HTCP-5031 (waist)
+- HTDW-4438 (arms)
+- HTDW-3536 (arms/head)
 
----
+Key features:
 
-## Joint System
+- Integrated motor, gearbox, driver, and dual encoders  
+- Two-stage planetary reduction  
+- CAN FD communication (up to 1 kHz control loop)  
 
-Each joint is responsible for controlled movement. Joint characteristics include:
+Typical performance:
 
-- Defined motion range (joint limits)
-- Maximum velocity constraints
-- Load-bearing capability
-
-All commands sent to joints must respect these constraints.
-
----
-
-## Sensor System
-
-The robot is equipped with sensors for state feedback. Typical sensors include:
-
-- Joint encoders (position and velocity)
-- Inertial Measurement Unit (IMU)
-- Additional sensors depending on configuration
-
-Sensor data is used for control and state estimation.
+- Leg module peak torque: 21 N·m  
+- Arm module peak torque: 10 N·m  
+- Head module peak torque: 3 N·m  
 
 ---
 
-## Control Unit
+## System Architecture
 
-The control unit is responsible for executing the control stack. It handles:
+![System Architecture](../../images/hardware/system_architecture.png)
 
-- Running control algorithms
-- Processing sensor data
-- Communicating with hardware interfaces
+The system adopts a distributed control architecture:
 
-The control unit connects software and hardware layers.
+- Central controller (RK3588 / Jetson platform)  
+- Multi-channel CAN FD communication  
+- Independent bus per subsystem  
 
----
-
-## Communication Interfaces
-
-The system provides multiple communication interfaces:
-
-- USB interfaces for peripheral devices
-- Ethernet interface for network communication
-- Internal communication buses for hardware control
-
-These interfaces enable interaction between system components.
+Each subsystem (legs, arms, waist, head) is connected via isolated CAN FD channels.
 
 ---
 
-## Back Panel Overview
+## Main Control Unit
 
-![Back Panel](../../images/hardware/back_panel_overview.png)
+![Main Control Box](../../images/hardware/main_control_box.png)
+
+The main control unit integrates:
+
+- RK3588 computing platform  
+- IMU  
+- Power management  
+- Communication interfaces  
+
+Specifications:
+
+- 16 GB RAM + 128 GB storage  
+- Supports motion control, perception, and planning  
+- WiFi / Ethernet connectivity  
+- OTA update support  
+
+---
+
+## Control Panel
+
+![Control Panel](../../images/hardware/control_panel.png)
+
+The robot provides a physical control panel for system operation and status monitoring.
+
+### Components
+
+- **Module Power Switch**  
+  Controls power to joint modules  
+
+- **Main Control Computer Power Switch**  
+  Controls the onboard computing system  
+
+- **Mode Lever**  
+  Used to switch display information (e.g., IP address, system status)  
+
+- **Screen**  
+  Displays system information and status  
+
+---
+
+### Power Operation
+
+**Module Power**
+
+- Power on: short press → modules powered  
+- Power off: short press → modules powered down  
+
+**Main Control Computer**
+
+- Power on: press > 2 seconds  
+- Power off: press > 2 seconds  
+
+---
+
+### Status Indication
+
+![Battery Indicator](../../images/hardware/battery_indicator.png)
+
+- The LED bar indicates battery level  
+- Each segment represents approximately 25% capacity  
+
+---
+
+### Notes
+
+- Always power on the main control system before sending commands  
+- Ensure battery level is sufficient before operation  
+
+---
+
+## Communication Architecture
+
+- 6 independent CAN FD buses  
+- Fault isolation between subsystems  
+- High-frequency multi-motor coordination  
+
+Advantages:
+
+- Easier debugging  
+- Higher reliability  
+- Strong scalability  
 
 ---
 
 ## Power System
 
-The power system supplies energy to all hardware components. Key considerations:
+### Battery
 
-- Stable power supply is required
-- Power connections must be secure
-- Improper power usage may damage the system
+- 6S lithium battery  
+- Nominal voltage: 21.6 V  
+- Energy: ~97 Wh  
+- Endurance: ~55–65 minutes  
 
-Power handling must follow safety guidelines.
+### Power Management
 
----
-
-## Battery Module
-
-![Battery](../../images/hardware/battery_module.png)
-
----
-
-## Hardware Interface Layer
-
-This layer connects software control with physical hardware. Responsibilities include:
-
-- Sending commands to actuators
-- Receiving sensor data
-- Managing communication protocols
-
-It abstracts hardware details from higher-level software.
+- Multi-branch power distribution  
+- Overcurrent / undervoltage / thermal protection  
+- Real-time monitoring via CAN  
 
 ---
 
-## Physical Constraints
+## Sensors and Expansion
 
-The system operates under physical constraints:
+### Built-in Sensors
 
-- Joint limits
-- Maximum torque and speed
-- Mechanical range of motion
+- IMU  
+- Joint encoders  
 
-These constraints must always be respected during operation.
+### External Interfaces
 
----
+- USB 2.0 / 3.0  
+- GPIO  
+- I²C / SPI / UART  
 
-## Maintenance Considerations
+Supports plug-and-play devices such as:
 
-To ensure long-term reliability:
-
-- Regularly inspect hardware components
-- Check connections and cables
-- Monitor for abnormal wear or damage
-
-Proper maintenance improves system lifespan.
+- Intel RealSense  
+- ZED Mini  
 
 ---
 
-## Summary
+## System Characteristics
 
-The hardware system provides the physical foundation of the platform. It enables:
+### Modularity
 
-- Motion execution
-- State sensing
-- Interaction with the environment
+- Quick-release hardware design  
+- Upper body can be upgraded independently  
 
-All software control ultimately operates through this hardware layer.
+### Reliability
+
+- Multi-bus CAN FD isolation  
+- Integrated protection mechanisms  
+
+### Performance
+
+- Verified torque margins  
+- Stable thermal performance (< 55 °C in long-duration tests)  
 
 ---
+
+## Notes
+
+- Hardware modules are reused across configurations  
+- Driver layer remains consistent during upgrades  

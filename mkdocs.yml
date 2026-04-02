@@ -55,14 +55,13 @@ nav:
       - Troubleshooting: tutorials/troubleshooting/index.md
 
   - Reference:
+      - Overview: reference/index.md
       - Hardware: reference/hardware/index.md
       - Software: reference/software/index.md
       - Interfaces: reference/interfaces/index.md
       - Configuration: reference/configuration/index.md
 
   - Explanation:
-      - System Architecture: explanation/system-architecture.md
-      - Control Stack: explanation/control-stack.md
       - Sim2Real Theory: explanation/sim2real.md
       - Design Principles: explanation/design-principles.md
 

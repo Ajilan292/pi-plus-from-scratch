@@ -58,7 +58,7 @@ hide:
 
 ## Quick Access
 
-<div class="grid-3">
+<div class="grid-4">
   <a class="pcard" href="tutorials/intro/">
     <div class="pcard-title">Intro</div>
     <div class="pcard-desc">Get familiar with PI Plus platform and concepts.</div>
@@ -70,6 +70,10 @@ hide:
   <a class="pcard" href="tutorials/safety-and-teleop/">
     <div class="pcard-title">Safety & Teleop</div>
     <div class="pcard-desc">Learn safe operation and remote control procedures.</div>
+  </a>
+  <a class="pcard" href="reference/hardware/">
+    <div class="pcard-title">Hardware</div>
+    <div class="pcard-desc">Hardware structure, components, and specifications.</div>
   </a>
 </div>
 

@@ -1,40 +1,23 @@
 # Reference Documentation
 
-Technical reference documentation for PI Plus robot, including API, FAQ, troubleshooting, and other information.
+This section contains technical reference documentation for the PI Plus robot system.
 
-## Documentation Categories
+## Categories
 
-### Technical Reference
-- [API Documentation](./api.md) - System API interface specifications
-- [Changelog](./changelog.md) - Version update records
+- [Hardware](./hardware/) - Hardware structure, components, and specifications
+- [Software](./software/) - Software architecture and components
+- [Interfaces](./interfaces/) - System interfaces and protocols
+- [Configuration](./configuration/) - Configuration files and settings
 
-### Problem Solving
-- [FAQ](./faq.md) - Frequently asked questions
-- [Troubleshooting](./troubleshooting.md) - Fault diagnosis and solutions
+## How to Use
 
-## Usage Instructions
+1. Select the appropriate category based on your needs
+2. Browse the documentation for detailed information
+3. Use the search function for specific topics
 
-### Finding Information
-1. **Problem Classification**: Select appropriate documentation based on problem type
-2. **Keyword Search**: Use keywords for quick location
-3. **Directory Navigation**: Find through directory structure
+## Additional Resources
 
-### Problem Solving Process
-1. **Problem Description**: Clearly describe encountered issues
-2. **Document Search**: Find solutions in relevant documentation
-3. **Solution Attempt**: Try solutions following step-by-step instructions
-4. **Result Recording**: Record solution process and results
-
-## Contribution Guidelines
-
-Welcome to contribute reference documentation:
-1. Report documentation errors or deficiencies
-2. Provide new problem solutions
-3. Share usage experiences and tips
-4. Submit improvement suggestions
-
-## Update Plan
-- [ ] Complete API documentation
-- [ ] Supplement FAQ content
-- [ ] Update troubleshooting guide
-- [ ] Add usage cases
+- [API Documentation](./api.md)
+- [FAQ](./faq.md)
+- [Troubleshooting](./troubleshooting.md)
+- [Changelog](./changelog.md)
