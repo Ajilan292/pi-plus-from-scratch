@@ -19,7 +19,7 @@ Do not power on the system if any connection is incomplete.
 
 ## Hardware Interface Overview
 
-![Back Panel Guide](../../images/hardware/back_panel_operation_guide.png)
+![Back Panel Guide](../../images/hardware/back_panel_overview.png)
 ![Status Reference](../../images/hardware/back_panel_status_reference.png)
 
 ---
