@@ -1,185 +1,241 @@
-# Sim-to-Real Deployment
-
-This section describes how to transfer policies or control strategies from simulation to the real robot system. Sim-to-real deployment is a critical step that bridges virtual development and real-world execution.
-
----
+# Sim2Real Deployment 
 
 ## Overview
 
-The sim-to-real pipeline allows users to:
+This section describes how to deploy a trained policy from simulation to a real robot.
 
-- Develop and validate policies in simulation
-- Transfer policies to the real robot
-- Execute and evaluate real-world performance
+The objective is to ensure that a policy trained in simulation can be executed on real hardware **without modifying its structure or semantics**.
 
-The goal is to minimize the gap between simulation and real-world behavior.
+This process includes:
 
----
-
-## Key Challenges
-
-Simulation and real-world systems differ in several aspects:
-
-- Sensor noise and inaccuracies
-- Actuator delays and nonlinearities
-- Unmodeled dynamics
-- Environmental uncertainty
-
-These differences are commonly referred to as the "sim-to-real gap".
+- Model export
+- Runtime integration
+- Control loop alignment
+- Safety validation
+- Real-world debugging
 
 ---
 
-## Preparation for Deployment
+## Core Principle
 
-Before deploying to the real robot, ensure:
+Sim2Real is not a conversion step.
 
-- The policy is stable in simulation
-- No unsafe behaviors are observed
-- Control outputs are within valid ranges
-- The system has been tested under varied conditions
+It is a **consistency verification process** between:
 
-Policies that are unstable in simulation should not be deployed.
+- simulation pipeline
+- deployment pipeline
 
----
+A successful deployment requires that both pipelines share:
 
-## Policy Export
-
-Policies must be exported into a deployable format. Typical steps include:
-
-- Save trained model or control parameters
-- Convert to runtime-compatible format if necessary
-- Ensure compatibility with the robot control interface
-
-The exported policy should be version-controlled and documented.
+- identical observation structure
+- identical action interpretation
+- identical timing behavior
 
 ---
 
-## Interface Alignment
+## 1. Model Export
 
-The simulation interface and real robot interface must be consistent. Ensure:
+After training, export the policy:
 
-- Observation space matches (state representation)
-- Action space matches (control commands)
-- Units and scaling are consistent
+```bash
+instinct-play <task_name> --export-onnx
+```
 
-Mismatch in interfaces may lead to unexpected behavior.
+Output:
 
----
+```
+actor.onnx
+metadata.json
+```
 
-## Deployment Process
+### Requirements
 
-The general deployment process includes:
-
-1. Transfer policy to the robot system
-2. Load policy into runtime environment
-3. Start the control pipeline
-4. Enable policy execution
-
-Deployment should be performed in a controlled and safe environment.
-
----
-
-## Safety Constraints
-
-Before enabling full operation:
-
-- Apply limits to control outputs
-- Enable safety monitoring mechanisms
-- Prepare emergency stop capability
-
-Initial tests should be conducted under restricted conditions.
+- ONNX graph must be static and deterministic
+- Input/output tensor shapes must match deployment runtime
+- Metadata must define:
+  - observation order
+  - action scaling
+  - default joint pose
 
 ---
 
-## Initial Testing
+## 2. Runtime Integration
 
-During first deployment:
+The deployed model must be integrated into a runtime system:
 
-- Start with low-intensity actions
-- Gradually increase system activity
-- Monitor system response closely
+Typical stack:
 
-Do not directly execute aggressive or high-speed behaviors.
+```
+Sensor → Observation Builder → Policy (ONNX) → Action Decoder → Controller → Robot
+```
 
----
+### Minimal Inference Loop
 
-## Runtime Monitoring
-
-While the system is running:
-
-- Monitor sensor feedback
-- Observe joint states and motion stability
-- Check for abnormal behavior
-
-Any instability should be addressed immediately.
+```python
+obs = build_observation(sensor_data)
+action = onnx_model.run(obs)
+target_q = decode_action(action)
+send_to_controller(target_q)
+```
 
 ---
 
-## Iterative Refinement
+## 3. Control Interface Mapping
 
-Sim-to-real deployment is an iterative process. If performance is not satisfactory:
+The policy output must be mapped to the robot control interface.
 
-- Adjust simulation parameters
-- Introduce additional noise during training
-- Refine control policies
-- Re-deploy and test again
+Typical mapping:
 
----
+```python
+target_q = q_default + scale * action
+torque = pd_control(target_q, current_q, current_dq)
+```
 
-## Common Strategies
+Requirements:
 
-To improve sim-to-real performance:
-
-### Domain Randomization
-- Randomize physical parameters during simulation
-- Improve robustness to real-world variations
+- Joint order must match exactly
+- Scaling must match training configuration
+- Controller gains must be consistent
 
 ---
 
-### Noise Injection
-- Add sensor noise during training
-- Simulate real-world uncertainty
+## 4. Control Frequency Alignment
+
+Simulation and real robot must run at compatible frequencies.
+
+Example:
+
+| Component | Frequency |
+|----------|----------|
+| Policy | 50 Hz |
+| Controller | 500 Hz |
+
+Implementation:
+
+- policy runs at low frequency
+- controller interpolates or holds command
+
+Mismatch leads to:
+
+- delayed response
+- oscillation
+- instability
 
 ---
 
-### Conservative Control
-- Limit aggressive behaviors
-- Prioritize stability over performance
+## 5. Safety Layer (Mandatory)
+
+Before enabling full control, implement safety constraints:
+
+### Joint Limits
+
+```python
+target_q = clip(target_q, lower_limits, upper_limits)
+```
+
+### Torque Limits
+
+```python
+torque = clip(torque, -tau_limit, tau_limit)
+```
+
+### Emergency Stop
+
+- hardware-level stop
+- software watchdog timeout
 
 ---
 
-## Failure Handling
+## 6. Zero-Action Validation
 
-If unexpected behavior occurs:
+Before running policy:
 
-- Immediately stop the system
-- Analyze logs and system state
-- Identify mismatch between simulation and reality
-- Adjust and retest
+1. Set action = 0
+2. Run system
 
----
+Expected:
 
-## Validation
+- robot remains stable
+- no drift
+- no oscillation
 
-A successful deployment should satisfy:
+If failure occurs:
 
-- Stable operation
-- Safe behavior
-- Consistent performance across trials
-
-Validation should be performed multiple times.
+- check joint direction
+- check default pose
+- check controller gains
 
 ---
 
-## Summary
+## 7. Incremental Activation Strategy
 
-Sim-to-real deployment connects simulation and real-world execution. It requires:
+Do not directly run full policy.
 
-- Careful preparation
-- Interface consistency
-- Safety awareness
-- Iterative improvement
+Recommended steps:
 
-A well-designed sim-to-real pipeline significantly improves development efficiency and system reliability.
+1. Zero-action test
+2. Small amplitude action test
+3. Single-joint test
+4. Full policy rollout
 
 ---
+
+## 8. Real-World Debugging
+
+Common debugging steps:
+
+### Step 1: Verify Observation
+
+- check sensor values
+- compare with simulation range
+
+### Step 2: Verify Action
+
+- log raw policy output
+- ensure values are bounded
+
+### Step 3: Verify Mapping
+
+- confirm action → joint mapping
+- check sign and scaling
+
+### Step 4: Verify Timing
+
+- measure loop frequency
+- ensure stable scheduling
+
+---
+
+## 9. Common Failures
+
+| Problem | Cause | Solution |
+|--------|------|--------|
+| unstable robot | wrong gains | tune kp/kd |
+| wrong movement | joint mismatch | fix mapping |
+| oscillation | timing mismatch | align frequency |
+| no response | inference failure | check ONNX runtime |
+| drift at zero | offset error | fix default pose |
+
+---
+
+## 10. Execution Workflow
+
+```mermaid
+flowchart TD
+A[Train Policy] --> B[Export ONNX]
+B --> C[Integrate Runtime]
+C --> D[Map Control Interface]
+D --> E[Safety Layer]
+E --> F[Zero-Action Test]
+F --> G[Incremental Activation]
+G --> H[Full Deployment]
+```
+
+---
+
+## Key Takeaways
+
+- Sim2Real depends on strict consistency
+- Most failures come from mismatch, not model quality
+- Always validate step-by-step
+- Never skip safety checks
