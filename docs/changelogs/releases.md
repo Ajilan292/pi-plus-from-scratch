@@ -16,9 +16,9 @@ The platform uses a semantic versioning format:
 MAJOR.MINOR.PATCH
 ```
 
-- **MAJOR**: Breaking changes or major architectural updates  
-- **MINOR**: New features and improvements  
-- **PATCH**: Bug fixes and minor adjustments  
+- **MAJOR**: Breaking changes or major architectural updates 
+- **MINOR**: New features and improvements 
+- **PATCH**: Bug fixes and minor adjustments 
 
 ---
 
@@ -26,11 +26,11 @@ MAJOR.MINOR.PATCH
 
 ### Highlights
 
-- First stable release of PI Plus platform  
-- Full configuration-driven architecture  
-- Joint-centric control model implemented  
-- CAN-FD based motor communication supported  
-- Basic humanoid configuration (25 DOF) supported  
+- First stable release of PI Plus platform 
+- Full configuration-driven architecture 
+- Joint-centric control model implemented 
+- CAN-FD based motor communication supported 
+- Basic humanoid configuration (25 DOF) supported 
 
 ---
 
@@ -40,9 +40,9 @@ MAJOR.MINOR.PATCH
 
 - Modular system architecture (hardware → control → behavior → intelligence)
 - Configuration-driven robot definition:
-  - `robot_param.yaml`
-  - `joints.yaml`
-  - URDF integration
+ - `robot_param.yaml`
+ - `joints.yaml`
+ - URDF integration
 - Multi-robot variant support via `robot_type`
 
 #### Control
@@ -111,9 +111,9 @@ MAJOR.MINOR.PATCH
 
 If you find issues or want to contribute:
 
-- Submit bug reports  
-- Propose improvements  
-- Contribute new modules or configurations  
+- Submit bug reports 
+- Propose improvements 
+- Contribute new modules or configurations 
 
 ---
 
@@ -121,7 +121,7 @@ If you find issues or want to contribute:
 
 This release establishes the foundation of the PI Plus platform:
 
-- Modular  
-- Configurable  
-- Extensible  
-- Ready for integration with modern robotics and AI systems  
+- Modular 
+- Configurable 
+- Extensible 
+- Ready for integration with modern robotics and AI systems 

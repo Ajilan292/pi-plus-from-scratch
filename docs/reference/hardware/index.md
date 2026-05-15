@@ -8,9 +8,9 @@ Mini Pi+ is a 27-DOF full humanoid robot platform evolved from Mini Pi.
 
 The system follows a modular design:
 
-- Leg modules are fully reused from Mini Pi  
-- Upper body (waist, arms, head) is added via quick-release interfaces  
-- No modification to leg control strategy or driver layer is required  
+- Leg modules are fully reused from Mini Pi 
+- Upper body (waist, arms, head) is added via quick-release interfaces 
+- No modification to leg control strategy or driver layer is required 
 
 This design enables rapid iteration and extensibility.
 
@@ -29,8 +29,8 @@ The robot consists of:
 
 Key properties:
 
-- Height: ~75 cm  
-- Mass: ~13.84 kg  
+- Height: ~75 cm 
+- Mass: ~13.84 kg 
 
 The modular structure enables rapid hardware extension without redesigning the core system.
 
@@ -49,15 +49,15 @@ The platform uses integrated joint modules:
 
 Key features:
 
-- Integrated motor, gearbox, driver, and dual encoders  
-- Two-stage planetary reduction  
-- CAN FD communication (up to 1 kHz control loop)  
+- Integrated motor, gearbox, driver, and dual encoders 
+- Two-stage planetary reduction 
+- CAN FD communication (up to 1 kHz control loop) 
 
 Typical performance:
 
-- Leg module peak torque: 21 N·m  
-- Arm module peak torque: 10 N·m  
-- Head module peak torque: 3 N·m  
+- Leg module peak torque: 21 N·m 
+- Arm module peak torque: 10 N·m 
+- Head module peak torque: 3 N·m 
 
 ---
 
@@ -67,9 +67,9 @@ Typical performance:
 
 The system adopts a distributed control architecture:
 
-- Central controller (RK3588 / Jetson platform)  
-- Multi-channel CAN FD communication  
-- Independent bus per subsystem  
+- Central controller (RK3588 / Jetson platform) 
+- Multi-channel CAN FD communication 
+- Independent bus per subsystem 
 
 Each subsystem (legs, arms, waist, head) is connected via isolated CAN FD channels.
 
@@ -81,17 +81,17 @@ Each subsystem (legs, arms, waist, head) is connected via isolated CAN FD channe
 
 The main control unit integrates:
 
-- RK3588 computing platform  
-- IMU  
-- Power management  
-- Communication interfaces  
+- RK3588 computing platform 
+- IMU 
+- Power management 
+- Communication interfaces 
 
 Specifications:
 
-- 16 GB RAM + 128 GB storage  
-- Supports motion control, perception, and planning  
-- WiFi / Ethernet connectivity  
-- OTA update support  
+- 16 GB RAM + 128 GB storage 
+- Supports motion control, perception, and planning 
+- WiFi / Ethernet connectivity 
+- OTA update support 
 
 ---
 
@@ -103,17 +103,17 @@ The robot provides a physical control panel for system operation and status moni
 
 ### Components
 
-- **Module Power Switch**  
-  Controls power to joint modules  
+- **Module Power Switch** 
+ Controls power to joint modules 
 
-- **Main Control Computer Power Switch**  
-  Controls the onboard computing system  
+- **Main Control Computer Power Switch** 
+ Controls the onboard computing system 
 
-- **Mode Lever**  
-  Used to switch display information (e.g., IP address, system status)  
+- **Mode Lever** 
+ Used to switch display information (e.g., IP address, system status) 
 
-- **Screen**  
-  Displays system information and status  
+- **Screen** 
+ Displays system information and status 
 
 ---
 
@@ -121,13 +121,13 @@ The robot provides a physical control panel for system operation and status moni
 
 **Module Power**
 
-- Power on: short press → modules powered  
-- Power off: short press → modules powered down  
+- Power on: short press → modules powered 
+- Power off: short press → modules powered down 
 
 **Main Control Computer**
 
-- Power on: press > 2 seconds  
-- Power off: press > 2 seconds  
+- Power on: press > 2 seconds 
+- Power off: press > 2 seconds 
 
 ---
 
@@ -135,29 +135,29 @@ The robot provides a physical control panel for system operation and status moni
 
 ![Battery Indicator](../../images/hardware/battery_indicator.png)
 
-- The LED bar indicates battery level  
-- Each segment represents approximately 25% capacity  
+- The LED bar indicates battery level 
+- Each segment represents approximately 25% capacity 
 
 ---
 
 ### Notes
 
-- Always power on the main control system before sending commands  
-- Ensure battery level is sufficient before operation  
+- Always power on the main control system before sending commands 
+- Ensure battery level is sufficient before operation 
 
 ---
 
 ## Communication Architecture
 
-- 6 independent CAN FD buses  
-- Fault isolation between subsystems  
-- High-frequency multi-motor coordination  
+- 6 independent CAN FD buses 
+- Fault isolation between subsystems 
+- High-frequency multi-motor coordination 
 
 Advantages:
 
-- Easier debugging  
-- Higher reliability  
-- Strong scalability  
+- Easier debugging 
+- Higher reliability 
+- Strong scalability 
 
 ---
 
@@ -165,16 +165,16 @@ Advantages:
 
 ### Battery
 
-- 6S lithium battery  
-- Nominal voltage: 21.6 V  
-- Energy: ~97 Wh  
-- Endurance: ~55–65 minutes  
+- 6S lithium battery 
+- Nominal voltage: 21.6 V 
+- Energy: ~97 Wh 
+- Endurance: ~55–65 minutes 
 
 ### Power Management
 
-- Multi-branch power distribution  
-- Overcurrent / undervoltage / thermal protection  
-- Real-time monitoring via CAN  
+- Multi-branch power distribution 
+- Overcurrent / undervoltage / thermal protection 
+- Real-time monitoring via CAN 
 
 ---
 
@@ -182,19 +182,19 @@ Advantages:
 
 ### Built-in Sensors
 
-- IMU  
-- Joint encoders  
+- IMU 
+- Joint encoders 
 
 ### External Interfaces
 
-- USB 2.0 / 3.0  
-- GPIO  
-- I²C / SPI / UART  
+- USB 2.0 / 3.0 
+- GPIO 
+- I²C / SPI / UART 
 
 Supports plug-and-play devices such as:
 
-- Intel RealSense  
-- ZED Mini  
+- Intel RealSense 
+- ZED Mini 
 
 ---
 
@@ -202,22 +202,22 @@ Supports plug-and-play devices such as:
 
 ### Modularity
 
-- Quick-release hardware design  
-- Upper body can be upgraded independently  
+- Quick-release hardware design 
+- Upper body can be upgraded independently 
 
 ### Reliability
 
-- Multi-bus CAN FD isolation  
-- Integrated protection mechanisms  
+- Multi-bus CAN FD isolation 
+- Integrated protection mechanisms 
 
 ### Performance
 
-- Verified torque margins  
-- Stable thermal performance (< 55 °C in long-duration tests)  
+- Verified torque margins 
+- Stable thermal performance (< 55 °C in long-duration tests) 
 
 ---
 
 ## Notes
 
-- Hardware modules are reused across configurations  
-- Driver layer remains consistent during upgrades  
+- Hardware modules are reused across configurations 
+- Driver layer remains consistent during upgrades 

@@ -248,13 +248,13 @@ Namespace behavior:
 
 ```bash
 ros2 launch hightorque_bringup pi_plus_rknn.launch.py \
-  model_type:=pi_plus \
-  leg_type:=S \
-  leg:=12 \
-  arm:=8 \
-  claw:=0 \
-  head:=2 \
-  waist:=0
+ model_type:=pi_plus \
+ leg_type:=S \
+ leg:=12 \
+ arm:=8 \
+ claw:=0 \
+ head:=2 \
+ waist:=0
 ```
 
 Resolved:

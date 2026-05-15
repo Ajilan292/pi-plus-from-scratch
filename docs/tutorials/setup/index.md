@@ -74,7 +74,7 @@ export https_proxy=http://127.0.0.1:7890
 ```
 
 !!! note
-    This step is only required when the robot cannot directly access the external network.
+ This step is only required when the robot cannot directly access the external network.
 
 ---
 
@@ -119,10 +119,10 @@ sudo add-apt-repository universe
 
 sudo apt update && sudo apt install curl -y
 sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key \
-  -o /usr/share/keyrings/ros-archive-keyring.gpg
+ -o /usr/share/keyrings/ros-archive-keyring.gpg
 
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" \
-  | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+ | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 ```
 
 ### 4.3 Install ROS2 Base
@@ -138,15 +138,15 @@ sudo apt install ros-dev-tools -y
 
 ```bash
 sudo apt install \
-  ros-foxy-joy-linux \
-  ros-foxy-example-interfaces \
-  ros-foxy-map-msgs \
-  ros-foxy-turtlesim \
-  ros-foxy-pcl-msgs \
-  ros-foxy-gazebo-msgs \
-  ros-foxy-rosbag2-storage-mcap \
-  nlohmann-json3-dev \
-  -y
+ ros-foxy-joy-linux \
+ ros-foxy-example-interfaces \
+ ros-foxy-map-msgs \
+ ros-foxy-turtlesim \
+ ros-foxy-pcl-msgs \
+ ros-foxy-gazebo-msgs \
+ ros-foxy-rosbag2-storage-mcap \
+ nlohmann-json3-dev \
+ -y
 ```
 
 After installation, verify the ROS2 environment:
@@ -168,27 +168,27 @@ Comment out any automatic ROS1 sourcing line in `~/.bashrc`.
 
 ```bash
 rosenv() {
-    unset -v $(env | grep -o '^ROS[^=]*' | tr '\n' ' ')
-    unset PYTHONPATH
-    unset CMAKE_PREFIX_PATH
-    unset AMENT_PREFIX_PATH
-    unset COLCON_PREFIX_PATH
-    unset LD_LIBRARY_PATH
+ unset -v $(env | grep -o '^ROS[^=]*' | tr '\n' ' ')
+ unset PYTHONPATH
+ unset CMAKE_PREFIX_PATH
+ unset AMENT_PREFIX_PATH
+ unset COLCON_PREFIX_PATH
+ unset LD_LIBRARY_PATH
 
-    case $1 in
-        foxy)
-            source /opt/ros/foxy/setup.bash
-            echo "Switched to ROS2 Foxy"
-            ;;
-        noetic)
-            source /opt/ros/noetic/setup.bash
-            echo "Switched to ROS1 Noetic"
-            ;;
-        *)
-            echo "Usage: rosenv [foxy|noetic]"
-            echo "Current ROS_DISTRO: $ROS_DISTRO"
-            ;;
-    esac
+ case $1 in
+ foxy)
+ source /opt/ros/foxy/setup.bash
+ echo "Switched to ROS2 Foxy"
+ ;;
+ noetic)
+ source /opt/ros/noetic/setup.bash
+ echo "Switched to ROS1 Noetic"
+ ;;
+ *)
+ echo "Usage: rosenv [foxy|noetic]"
+ echo "Current ROS_DISTRO: $ROS_DISTRO"
+ ;;
+ esac
 }
 ```
 
@@ -224,7 +224,7 @@ sudo make install
 ```
 
 !!! warning
-    Use the provided deployment package that matches your robot system.
+ Use the provided deployment package that matches your robot system.
 
 ---
 

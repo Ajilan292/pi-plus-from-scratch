@@ -110,3 +110,59 @@ This documentation is part of the PI Plus project.
 **Copy Date**: 2026-03-27  
 **Source**: `/home/sunteng/.openclaw/workspace/pi-plus-from-scratch/`  
 **Destination**: `/home/sunteng/Desktop/pi-plus-docs-copy/`
+
+## Homepage integration note
+
+This package keeps the original MkDocs documentation project, including `.git`, `.github`, `docs/`, `mkdocs.yml`, and all existing documentation pages.
+
+The homepage is now implemented as a raw static page at:
+
+```text
+docs/index.html
+```
+
+Its dedicated stylesheet and assets are:
+
+```text
+docs/stylesheets/home-static.css
+docs/assets/home-hero-wide.png
+docs/assets/ht-logo-trademark.png
+```
+
+Run locally with:
+
+```bash
+mkdocs serve
+```
+
+The raw homepage avoids MkDocs Material's `.md-grid` layout restriction while the rest of the documentation still uses MkDocs Material.
+
+## UI integration update
+
+This version uses a hybrid approach:
+
+- `docs/index.html` is a raw full-width static homepage to avoid MkDocs Material width limitations.
+- Normal documentation pages still use MkDocs Material.
+- `docs/stylesheets/home-static.css` controls the homepage only.
+- `docs/stylesheets/extra.css` controls the normal documentation pages.
+- The HighTorque trademark image is stored at `docs/assets/ht-logo-trademark.png` and is used by both the homepage and Material pages.
+
+For local preview:
+
+```bash
+mkdocs serve
+```
+
+If the browser is narrow or half-screen, the homepage now hides the right price block earlier and relaxes hero text width to avoid overlapping.
+
+
+### Navigation alignment update
+
+The left homepage navigation and the normal MkDocs left/right navigation panels now use fixed viewport-height cards so they visually align with the central content panel. On narrow screens, these fixed heights are disabled to avoid text overlap.
+
+
+### UI cleanup update v4
+
+- Removed emoji icons from normal documentation content and table-of-contents headings.
+- Homepage decorative icons are kept.
+- Changed the selected item color in the left navigation from deep blue to a light-blue active state.

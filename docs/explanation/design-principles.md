@@ -4,10 +4,10 @@
 
 The PI Plus platform is not designed as a single-purpose robot system, but as a **generalizable robotics platform** that supports:
 
-- Multiple hardware configurations  
-- Scalable control architectures  
-- Rapid iteration between simulation and real-world deployment  
-- Integration with modern AI and agent systems  
+- Multiple hardware configurations 
+- Scalable control architectures 
+- Rapid iteration between simulation and real-world deployment 
+- Integration with modern AI and agent systems 
 
 The core philosophy can be summarized as:
 
@@ -23,27 +23,27 @@ The platform enforces a clear separation between different system layers:
 
 ```text
 Physical Hardware (motors, sensors)
-        ↓
+ ↓
 Hardware Interface (CAN / drivers)
-        ↓
+ ↓
 Control Layer (joint control, state estimation)
-        ↓
+ ↓
 Behavior Layer (skills, motion logic)
-        ↓
+ ↓
 Intelligence Layer (policy / AI / agent)
 ```
 
 Each layer is:
 
-- Independently replaceable  
-- Clearly defined in responsibility  
-- Loosely coupled through well-defined interfaces  
+- Independently replaceable 
+- Clearly defined in responsibility 
+- Loosely coupled through well-defined interfaces 
 
 #### Why This Matters
 
-- Hardware changes do not break high-level behaviors  
-- Control algorithms can evolve without modifying hardware mapping  
-- AI systems can be integrated without touching low-level drivers  
+- Hardware changes do not break high-level behaviors 
+- Control algorithms can evolve without modifying hardware mapping 
+- AI systems can be integrated without touching low-level drivers 
 
 ---
 
@@ -53,9 +53,9 @@ The platform avoids hardcoding robot structure in code.
 
 Instead, it relies on:
 
-- `robot_param.yaml` → hardware topology  
-- `joints.yaml` → control semantics  
-- URDF → physical structure  
+- `robot_param.yaml` → hardware topology 
+- `joints.yaml` → control semantics 
+- URDF → physical structure 
 
 This allows:
 
@@ -67,10 +67,10 @@ Same codebase
 
 #### Benefits
 
-- Rapid support for new robot variants  
-- No recompilation needed for structural changes  
-- Easier debugging and calibration  
-- Clear boundary between “code” and “robot definition”  
+- Rapid support for new robot variants 
+- No recompilation needed for structural changes 
+- Easier debugging and calibration 
+- Clear boundary between “code” and “robot definition” 
 
 ---
 
@@ -80,9 +80,9 @@ The system treats hardware as an **abstracted resource**, not a tightly coupled 
 
 For example:
 
-- Motors are not referenced directly  
-- Everything is expressed as **joint-level semantics**  
-- CAN topology is hidden behind configuration  
+- Motors are not referenced directly 
+- Everything is expressed as **joint-level semantics** 
+- CAN topology is hidden behind configuration 
 
 #### Implication
 
@@ -94,9 +94,9 @@ There is no "motor", only "joint"
 
 This abstraction enables:
 
-- Cross-hardware compatibility  
-- Cleaner control logic  
-- Easier simulation-to-real transfer  
+- Cross-hardware compatibility 
+- Cleaner control logic 
+- Easier simulation-to-real transfer 
 
 ---
 
@@ -106,9 +106,9 @@ The platform is fundamentally **joint-driven**, not actuator-driven.
 
 All control logic is expressed in terms of:
 
-- Joint position  
-- Joint velocity  
-- Joint torque (optional)  
+- Joint position 
+- Joint velocity 
+- Joint torque (optional) 
 
 Even when hardware differs, the interface remains consistent.
 
@@ -116,15 +116,15 @@ Even when hardware differs, the interface remains consistent.
 
 Because:
 
-- URDF is joint-based  
-- Most control algorithms operate in joint space  
-- Learning-based methods assume joint-level representation  
+- URDF is joint-based 
+- Most control algorithms operate in joint space 
+- Learning-based methods assume joint-level representation 
 
 This creates a unified representation across:
 
-- Simulation  
-- Real robot  
-- AI policy  
+- Simulation 
+- Real robot 
+- AI policy 
 
 ---
 
@@ -137,9 +137,9 @@ A core goal of the platform is:
 This is achieved through:
 
 - Identical joint definitions (`joints.yaml`)
-- Shared URDF model  
-- Consistent joint ordering and mapping  
-- Matching control interfaces  
+- Shared URDF model 
+- Consistent joint ordering and mapping 
+- Matching control interfaces 
 
 #### Practical Outcome
 
@@ -169,14 +169,14 @@ A unified control interface
 
 #### Design Choice
 
-- Hardware → distributed  
-- Software interface → centralized  
+- Hardware → distributed 
+- Software interface → centralized 
 
 #### Why This Works
 
-- Keeps low-level communication efficient  
-- Keeps high-level control simple  
-- Avoids exposing hardware complexity to upper layers  
+- Keeps low-level communication efficient 
+- Keeps high-level control simple 
+- Avoids exposing hardware complexity to upper layers 
 
 ---
 
@@ -184,15 +184,15 @@ A unified control interface
 
 Even though the platform supports AI integration, the core control system is designed to be:
 
-- Deterministic  
-- Real-time safe  
-- Predictable  
+- Deterministic 
+- Real-time safe 
+- Predictable 
 
 This ensures:
 
-- Stable locomotion  
-- Safe hardware behavior  
-- Reliable debugging  
+- Stable locomotion 
+- Safe hardware behavior 
+- Reliable debugging 
 
 #### Philosophy
 
@@ -206,21 +206,21 @@ The system is built to be extended in multiple directions:
 
 #### Hardware
 
-- Add/remove joints  
-- Change motor types  
-- Modify CAN topology  
+- Add/remove joints 
+- Change motor types 
+- Modify CAN topology 
 
 #### Control
 
-- Replace controllers  
-- Add filters / estimators  
-- Integrate whole-body control  
+- Replace controllers 
+- Add filters / estimators 
+- Integrate whole-body control 
 
 #### Intelligence
 
-- RL policies  
-- Imitation learning  
-- Agent-based control (e.g., OpenClaw)  
+- RL policies 
+- Imitation learning 
+- Agent-based control (e.g., OpenClaw) 
 
 All without rewriting the base system.
 
@@ -230,9 +230,9 @@ All without rewriting the base system.
 
 The platform does not assume:
 
-- A specific AI model  
-- A specific control strategy  
-- A fixed behavior pipeline  
+- A specific AI model 
+- A specific control strategy 
+- A fixed behavior pipeline 
 
 Instead, it provides:
 
@@ -242,9 +242,9 @@ A clean execution interface
 
 So that external systems can decide:
 
-- What to do  
-- When to act  
-- How to generate actions  
+- What to do 
+- When to act 
+- How to generate actions 
 
 #### Example
 
@@ -268,9 +268,9 @@ The system avoids hidden logic and implicit behavior.
 
 Everything is:
 
-- Explicitly configured  
-- Clearly mapped  
-- Inspectable and debuggable  
+- Explicitly configured 
+- Clearly mapped 
+- Inspectable and debuggable 
 
 #### Philosophy
 
@@ -284,21 +284,21 @@ The platform can be understood as a transformation pipeline:
 
 ```text
 High-level intent (AI / user / script)
-        ↓
+ ↓
 Behavior / skill
-        ↓
+ ↓
 Joint command
-        ↓
+ ↓
 Motor command (via mapping)
-        ↓
+ ↓
 Physical motion
 ```
 
 Each step is:
 
-- Traceable  
-- Replaceable  
-- Testable  
+- Traceable 
+- Replaceable 
+- Testable 
 
 ---
 
@@ -306,16 +306,16 @@ Each step is:
 
 ### What the Platform Optimizes For
 
-- Flexibility across robot variants  
-- Clean abstraction boundaries  
-- Sim2Real consistency  
-- Integration with modern AI systems  
+- Flexibility across robot variants 
+- Clean abstraction boundaries 
+- Sim2Real consistency 
+- Integration with modern AI systems 
 
 ### What It Does Not Optimize For
 
-- Minimal configuration effort  
-- Fully plug-and-play user experience  
-- Black-box simplicity  
+- Minimal configuration effort 
+- Fully plug-and-play user experience 
+- Black-box simplicity 
 
 #### Reason
 
@@ -331,23 +331,23 @@ The design aligns with current trends in robotics:
 
 ### From Monolithic → Modular
 
-- Old systems: tightly coupled  
-- PI Plus: layered architecture  
+- Old systems: tightly coupled 
+- PI Plus: layered architecture 
 
 ### From Hardware-Centric → Interface-Centric
 
-- Focus shifts from motors to interfaces  
+- Focus shifts from motors to interfaces 
 
 ### From Scripted → Learned Behavior
 
-- Supports RL / imitation / agents  
+- Supports RL / imitation / agents 
 
 ### From Closed → Open Integration
 
 - Can connect with external systems like:
-  - OpenClaw  
-  - Vision models  
-  - Cloud-based intelligence  
+ - OpenClaw 
+ - Vision models 
+ - Cloud-based intelligence 
 
 ---
 
@@ -363,5 +363,5 @@ The PI Plus platform is built on the following core ideas:
 
 In essence:
 
-> It is not just a robot system.  
+> It is not just a robot system. 
 > It is a **robot execution platform**.

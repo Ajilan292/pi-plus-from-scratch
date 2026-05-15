@@ -24,16 +24,16 @@ The PI Plus software stack can be understood as a layered runtime pipeline:
 
 ```text
 [ Teleoperation / Policy / Script ]
-                ↓
-         /request_control
-                ↓
-         /control_command
-                ↓
-    hightorque_midware_node
-                ↓
-        Motor Driver (CAN)
-                ↓
-              Robot
+ ↓
+ /request_control
+ ↓
+ /control_command
+ ↓
+ hightorque_midware_node
+ ↓
+ Motor Driver (CAN)
+ ↓
+ Robot
 
 Feedback:
 Robot → /joint_states → Controller / Policy
@@ -51,13 +51,13 @@ The teleoperation input chain is organized as follows:
 
 ```text
 joy_linux_node
-    ↓
+ ↓
 joy_input
-    ↓
+ ↓
 joy_mapper_node.py
-    ↓
+ ↓
 hightorque_joy
-    ↓
+ ↓
 /control_command
 ```
 

@@ -1,319 +1,318 @@
 /* =========================================
-   Header: deep blue L->R gradient
+   HighTorque Docs - Material pages refinement
+   Applies to normal MkDocs documentation pages.
+   Homepage uses docs/index.html + home-static.css separately.
    ========================================= */
+
+:root {
+  --ht-blue-1: #0653f5;
+  --ht-blue-2: #2872ff;
+  --ht-blue-3: #79adff;
+  --ht-text-1: #0f172a;
+  --ht-text-2: #1f2937;
+  --ht-text-3: #4b5563;
+  --ht-line: #dbe4f2;
+  --ht-bg: #f3f7fc;
+
+  --md-primary-fg-color: #0b5cf0;
+  --md-primary-fg-color--light: #347bff;
+  --md-accent-fg-color: #0b5cf0;
+}
+
+/* Page shell */
+html,
+body,
+.md-container,
+.md-main {
+  background:
+    radial-gradient(1000px 420px at 72% 0%, rgba(40,114,255,.07), rgba(40,114,255,0) 66%),
+    linear-gradient(180deg, #edf3fb 0%, #f8fbff 42%, #ffffff 100%) !important;
+}
+
+.md-main__inner.md-grid {
+  max-width: 1440px !important;
+  gap: 1.35rem !important;
+  padding-top: 1.35rem !important;
+}
+
+/* Header */
 .md-header,
 .md-tabs {
-  background: linear-gradient(90deg, #0b1b4b 0%, #123a8a 55%, #0b1b4b 100%) !important;
-  color: rgba(255,255,255,.95) !important;
-  box-shadow: none !important;
-}
-/* Ensure no top tabs */
-.md-tabs { display: none !important; }
-
-.md-header__inner,
-.md-header__button { color: rgba(255,255,255,.95) !important; }
-
-.md-search,
-.md-search__form,
-.md-search__input { border-radius: 999px !important; }
-.md-search__form {
-  background: rgba(255,255,255,.14) !important;
-  border: 1px solid rgba(255,255,255,.18) !important;
-}
-.md-search__input {
-  background: transparent !important;
-  color: rgba(255,255,255,.95) !important;
-}
-.md-search__input::placeholder { color: rgba(255,255,255,.70) !important; }
-
-.md-header.is-scrolled { box-shadow: 0 10px 24px rgba(0,0,0,.18) !important; }
-
-/* =========================================
-   Sidebar: gray bg + white text, NO top blank
-   ========================================= */
-.md-sidebar--primary .md-sidebar__scrollwrap{
-  background: #1f232a !important;
-  padding-top: 0 !important;      /* kill blank band */
-  margin-top: 0 !important;
-}
-.md-sidebar--primary .md-sidebar__inner{
-  padding-top: 0 !important;      /* kill blank band */
-}
-
-/* Some versions add top offset via these */
-.md-sidebar--primary {
-  top: 0 !important;
-}
-.md-sidebar--primary .md-nav {
-  background: transparent !important;
-  padding-top: 0 !important;
-}
-
-/* Text colors */
-.md-sidebar--primary,
-.md-sidebar--primary .md-nav__title,
-.md-sidebar--primary .md-nav__link,
-.md-sidebar--primary .md-nav__item {
-  color: rgba(255,255,255,.86) !important;
-}
-
-.md-sidebar--primary .md-nav__link:hover {
-  color: rgba(255,255,255,1) !important;
-  background: rgba(255,255,255,.06) !important;
-  border-radius: 10px;
-}
-.md-sidebar--primary .md-nav__link--active {
-  color: #ffffff !important;
-  font-weight: 800 !important;
-}
-.md-sidebar--primary .md-nav__item--active > .md-nav__link {
-  border-left: 3px solid rgba(99,102,241,0.95);
-  padding-left: calc(var(--md-nav-indent) - 3px);
-}
-
-/* =========================================
-   Content: centered fixed width
-   ========================================= */
-.md-content,
-.md-content__inner { max-width: 1200px !important; }
-.md-main__inner { margin-left: auto !important; margin-right: auto !important; }
-
-/* =========================================
-   Landing hero
-   ========================================= */
-.landing-hero{
-  position: relative;
-  height: min(78vh, 720px);
-  border-radius: 18px;
-  overflow: hidden;
-  margin: 0 0 2rem 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.landing-video{
-  position:absolute; inset:0;
-  width:100%; height:100%;
-  object-fit: cover;
-}
-.landing-overlay{
-  position:absolute; inset:0;
   background:
-    radial-gradient(80% 120% at 20% 40%, rgba(79,70,229,.35), rgba(0,0,0,0)),
-    linear-gradient(90deg, rgba(0,0,0,.62), rgba(0,0,0,.18));
-}
-.landing-content{
-  position: relative;
-  z-index: 2;
-  padding: clamp(24px, 4vw, 56px);
-  max-width: 980px;
-}
-.landing-badge{
-  display:inline-block;
-  padding: 6px 10px;
-  border: 1px solid rgba(255,255,255,.25);
-  border-radius: 999px;
-  color: rgba(255,255,255,.9);
-  font-size: 13px;
-  margin-bottom: 14px;
-  backdrop-filter: blur(10px);
-}
-.landing-content h1{
-  color:#fff;
-  font-size: clamp(34px, 4.2vw, 56px);
-  line-height: 1.05;
-  margin: 0 0 10px 0;
-  letter-spacing: -0.02em;
-}
-.landing-subtitle{
-  color: rgba(255,255,255,.85);
-  font-size: clamp(16px, 1.6vw, 20px);
-  margin: 0 0 22px 0;
-  max-width: 46em;
+    linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,0) 50%),
+    linear-gradient(90deg, var(--ht-blue-1) 0%, var(--ht-blue-2) 50%, var(--ht-blue-3) 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 26px rgba(18,83,195,.18) !important;
 }
 
-/* Buttons */
-.landing-cta{ display:flex; gap:12px; flex-wrap:wrap; }
-.btn-primary, .btn-ghost{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  height: 44px;
-  padding: 0 18px;
-  border-radius: 999px;
-  font-weight: 800;
-  text-decoration: none !important;
-}
-.btn-primary{
-  background: linear-gradient(90deg, rgba(59,130,246,.95), rgba(79,70,229,.95));
-  color:#fff !important;
-  border: 1px solid rgba(255,255,255,.12);
-  box-shadow: 0 12px 30px rgba(79,70,229,.28);
-}
-.btn-ghost{
-  background: rgba(255,255,255,.18);
-  border: 1px solid rgba(255,255,255,.35);
-  color:#fff !important;
-  backdrop-filter: blur(10px);
-}
-.btn-primary:hover, .btn-ghost:hover{
-  transform: translateY(-1px);
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-
-/* =========================================
-   Modules (cards) - restore previous form
-   ========================================= */
-.grid-4, .grid-3{
-  display:grid;
-  gap: 14px;
-  margin: 14px 0 26px 0;
-}
-.grid-4{ grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.grid-3{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
-
-@media (max-width: 1000px){
-  .grid-4{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .grid-3{ grid-template-columns: repeat(1, minmax(0, 1fr)); }
-}
-
-.card, .pcard, .icon-card{
-  border: 1px solid rgba(0,0,0,.08);
-  border-radius: 16px;
-  padding: 16px;
-  background: var(--md-default-bg-color);
-  box-shadow: 0 10px 26px rgba(0,0,0,.06);
-}
-.card-title, .pcard-title, .icon-card-title{
-  font-weight: 900;
-  margin-bottom: 6px;
-}
-.card-desc, .pcard-desc, .icon-card-desc{
-  color: var(--md-default-fg-color--light);
-  font-size: 14px;
-}
-.pcard{
-  display:block;
-  text-decoration:none !important;
-  color: inherit;
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-.pcard:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 14px 32px rgba(0,0,0,.10);
-}
-
-/* CTA band */
-.cta-band{
-  margin-top: 20px;
-  padding: 16px;
-  border-radius: 16px;
-  border: 1px solid rgba(0,0,0,.08);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 14px;
-  background: linear-gradient(90deg, rgba(59,130,246,.12), rgba(79,70,229,.08), rgba(0,0,0,0));
-}
-.cta-title{ font-weight: 900; }
-.cta-desc{ color: var(--md-default-fg-color--light); font-size: 14px; }
-
-/* Hide the invisible long "Back to top" overlay button */
-button[aria-label="回到页面顶部"] {
+.md-tabs {
   display: none !important;
 }
 
-/* =========================
-   Fix sidebar white band: md-nav__title sticky background/shadow
-   ========================= */
+.md-header__inner.md-grid {
+  max-width: 1440px !important;
+}
+
+.md-header__title,
+.md-header__topic,
+.md-header__button,
+.md-header__source {
+  color: rgba(255,255,255,.98) !important;
+}
+
+.md-header__title {
+  font-weight: 850 !important;
+  letter-spacing: -.02em;
+}
+
+.md-logo img,
+.md-logo svg {
+  width: auto !important;
+  height: 38px !important;
+  max-width: 132px !important;
+  object-fit: contain !important;
+}
+
+/* Search */
+.md-search,
+.md-search__form,
+.md-search__input {
+  border-radius: 999px !important;
+}
+
+.md-search__form {
+  background: rgba(255,255,255,.86) !important;
+  border: 1px solid rgba(255,255,255,.78) !important;
+  box-shadow:
+    0 8px 18px rgba(15,56,130,.15),
+    inset 0 1px 0 rgba(255,255,255,.90);
+}
+
+.md-search__input {
+  background: transparent !important;
+  color: #1f2937 !important;
+}
+
+.md-search__input::placeholder {
+  color: rgba(92,107,130,.78) !important;
+}
+
+/* Sidebars */
+.md-sidebar--primary,
+.md-sidebar--secondary {
+  background: transparent !important;
+}
+
+.md-sidebar--primary .md-sidebar__scrollwrap,
+.md-sidebar--secondary .md-sidebar__scrollwrap {
+  background: rgba(255,255,255,.98) !important;
+  border: 1px solid var(--ht-line);
+  border-radius: 14px;
+  box-shadow:
+    0 16px 36px rgba(15,23,42,.07),
+    inset 0 1px 0 rgba(255,255,255,.96);
+}
+
+.md-sidebar--primary .md-sidebar__inner,
+.md-sidebar--primary .md-nav,
+.md-sidebar--primary .md-nav__title,
+.md-sidebar--primary .md-nav__list,
+.md-sidebar--primary .md-nav__item,
+.md-sidebar--primary .md-nav__link {
+  background: transparent !important;
+}
+
 .md-nav--primary .md-nav__title {
-  position: static !important;                 /* cancel sticky */
+  position: static !important;
   top: auto !important;
-  z-index: auto !important;
-  background: transparent !important;          /* no white background */
-  box-shadow: none !important;                 /* remove fade shadow */
+  box-shadow: none !important;
+  color: var(--ht-text-1) !important;
+  font-weight: 900 !important;
 }
 
-/* Optional: title text style (keep readable on dark sidebar) */
-.md-sidebar--primary .md-nav__title {
-  color: rgba(255,255,255,.92) !important;
+.md-sidebar--primary .md-nav__link,
+.md-sidebar--secondary .md-nav__link {
+  color: var(--ht-text-2) !important;
+  border-radius: 7px;
 }
 
-/* =========================
-   Fix sidebar white band: md-nav__title sticky background/shadow
-   ========================= */
-.md-nav--primary .md-nav__title {
-  position: static !important;                 /* cancel sticky */
-  top: auto !important;
-  z-index: auto !important;
-  background: transparent !important;          /* no white background */
-  box-shadow: none !important;                 /* remove fade shadow */
+.md-sidebar--primary .md-nav__link:hover,
+.md-sidebar--secondary .md-nav__link:hover {
+  color: var(--ht-blue-1) !important;
+  background: rgba(31,106,242,.08) !important;
 }
 
-/* Optional: title text style (keep readable on dark sidebar) */
-.md-sidebar--primary .md-nav__title {
-  color: rgba(255,255,255,.92) !important;
+.md-sidebar--primary .md-nav__link--active,
+.md-sidebar--primary .md-nav__item--active > .md-nav__link {
+  color: #0b5cf0 !important;
+  font-weight: 850 !important;
+  background: linear-gradient(90deg, #eaf2ff 0%, #dbeafe 100%) !important;
+  box-shadow: inset 0 0 0 1px rgba(31,106,242,.16), 0 6px 14px rgba(31,106,242,.10);
 }
 
-/* =========================
-   Responsive fix: sidebar on narrow screens (drawer) turns white
-   ========================= */
-
-/* Desktop sidebar styling (keep dark) */
-@media screen and (min-width: 76.25em) {
-  .md-sidebar--primary .md-sidebar__scrollwrap,
-  .md-sidebar--primary .md-sidebar__inner,
-  .md-sidebar--primary .md-nav {
-    background: #1f232a !important;
-  }
-  .md-sidebar--primary,
-  .md-sidebar--primary .md-nav__title,
-  .md-sidebar--primary .md-nav__link,
-  .md-sidebar--primary .md-nav__item {
-    color: rgba(255,255,255,.86) !important;
-  }
+.md-sidebar--primary .md-nav__item--active > .md-nav__link {
+  border-left: none !important;
+  padding-left: var(--md-nav-indent);
 }
 
-/* Mobile / narrow drawer styling: force drawer background to dark too */
+.md-nav__title {
+  color: var(--ht-text-1) !important;
+}
+
+/* Main article card */
+.md-content__inner {
+  margin-top: 0 !important;
+  padding: 2.1rem 2.35rem 2.6rem 2.35rem !important;
+  background: rgba(255,255,255,.98) !important;
+  border: 1px solid var(--ht-line);
+  border-radius: 14px;
+  box-shadow:
+    0 16px 36px rgba(15,23,42,.06),
+    inset 0 1px 0 rgba(255,255,255,.96);
+}
+
+.md-content__inner::before {
+  display: none !important;
+}
+
+/* Typography */
+.md-typeset {
+  color: var(--ht-text-2);
+  font-size: .78rem;
+  line-height: 1.7;
+}
+
+.md-typeset h1 {
+  margin: 0 0 1.35rem 0;
+  color: #050914;
+  font-weight: 920;
+  letter-spacing: -.045em;
+}
+
+.md-typeset h2 {
+  color: var(--ht-text-1);
+  font-weight: 880;
+  letter-spacing: -.025em;
+  border-bottom: 1px solid #e5edf7;
+  padding-bottom: .42rem;
+}
+
+.md-typeset h3 {
+  color: var(--ht-text-1);
+  font-weight: 820;
+}
+
+.md-typeset a {
+  color: var(--ht-blue-1);
+  font-weight: 650;
+}
+
+.md-typeset code {
+  border-radius: 6px;
+}
+
+.md-typeset pre > code {
+  border-radius: 12px;
+}
+
+.md-typeset img {
+  border-radius: 12px;
+  border: 1px solid #e0e7f2;
+  box-shadow: 0 12px 28px rgba(15,23,42,.06);
+}
+
+.md-typeset table:not([class]) {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(15,23,42,.05);
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(15,23,42,.04);
+}
+
+/* Footer */
+.md-footer {
+  background: #f3f7fc !important;
+}
+
+.md-footer-meta {
+  background: #eaf1fb !important;
+}
+
+/* Responsive */
 @media screen and (max-width: 76.25em) {
-  /* The drawer container */
-  .md-sidebar--primary {
-    background: #1f232a !important;
+  .md-main__inner.md-grid {
+    padding-top: 0 !important;
   }
-  .md-sidebar--primary .md-sidebar__scrollwrap,
-  .md-sidebar--primary .md-sidebar__inner,
-  .md-sidebar--primary .md-nav {
-    background: #1f232a !important;
+
+  .md-content__inner {
+    border-radius: 0 !important;
+    border-left: 0;
+    border-right: 0;
+    padding: 1.25rem 1rem 2rem 1rem !important;
+    box-shadow: none;
   }
-  .md-sidebar--primary,
-  .md-sidebar--primary .md-nav__title,
-  .md-sidebar--primary .md-nav__link,
-  .md-sidebar--primary .md-nav__item {
-    color: rgba(255,255,255,.86) !important;
+
+  .md-typeset h1 {
+    font-size: 1.65rem;
+    letter-spacing: -.035em;
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    background: rgba(255,255,255,.98) !important;
   }
 }
 
+@media screen and (max-width: 700px) {
+  .md-header__title {
+    font-size: .82rem !important;
+  }
+
+  .md-logo img,
+  .md-logo svg {
+    max-width: 96px !important;
+    height: 34px !important;
+  }
+
+  .md-typeset {
+    font-size: .74rem;
+  }
+}
+
+/* =========================================
+   Sidebar alignment patch for normal documentation pages
+   Align left/right navigation cards with the central content card.
+   ========================================= */
+.md-sidebar--primary,
+.md-sidebar--secondary {
+  padding-top: 0 !important;
+}
+
+.md-sidebar--primary .md-sidebar__scrollwrap,
+.md-sidebar--secondary .md-sidebar__scrollwrap {
+  margin-top: 0 !important;
+  min-height: calc(100vh - var(--md-header-height, 64px) - 2.7rem) !important;
+  max-height: calc(100vh - var(--md-header-height, 64px) - 2.7rem) !important;
+  overflow-y: auto !important;
+}
+
+.md-main__inner.md-grid {
+  align-items: flex-start !important;
+}
+
+.md-content__inner {
+  min-height: calc(100vh - var(--md-header-height, 64px) - 2.7rem) !important;
+}
+
+/* Narrow screens use drawer behavior, so do not force fixed heights. */
 @media screen and (max-width: 76.25em) {
-  .md-sidebar--primary .md-nav__link,
-  .md-sidebar--primary .md-nav__title,
-  .md-sidebar--primary .md-nav__item,
-  .md-nav--primary .md-nav__link,
-  .md-nav--primary .md-nav__title,
-  .md-nav--primary .md-nav__item,
-  .md-nav--primary .md-nav__source {
-    color: #111 !important;
-  }
-
-  .md-nav--primary .md-nav__link:hover,
-  .md-sidebar--primary .md-nav__link:hover {
-    color: #000 !important;
-  }
-
-  .md-nav--primary .md-nav__link--active,
-  .md-sidebar--primary .md-nav__link--active,
-  .md-nav--primary .md-nav__item--active > .md-nav__link,
-  .md-sidebar--primary .md-nav__item--active > .md-nav__link {
-    color: #000 !important;
-    font-weight: 700 !important;
+  .md-sidebar--primary .md-sidebar__scrollwrap,
+  .md-sidebar--secondary .md-sidebar__scrollwrap,
+  .md-content__inner {
+    min-height: auto !important;
+    max-height: none !important;
   }
 }

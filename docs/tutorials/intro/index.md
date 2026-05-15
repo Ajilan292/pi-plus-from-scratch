@@ -10,11 +10,11 @@ It is designed to help users go from initial setup to real robot deployment, wit
 
 Follow the tutorials in order:
 
-- [Setup](../setup/) – Install environment and prepare dependencies  
-- [First Run](../first-run/) – Launch the system and verify basic functionality  
-- [Safety & Teleoperation](../safety-and-teleop/) – Safe operation and manual control  
-- [Simulation Basics](../sim-basics/) – Understand simulation workflow  
-- [Sim-to-Real Deployment](../sim2real-deploy/) – Deploy policies to real robot  
+- [Setup](../setup/) – Install environment and prepare dependencies 
+- [First Run](../first-run/) – Launch the system and verify basic functionality 
+- [Safety & Teleoperation](../safety-and-teleop/) – Safe operation and manual control 
+- [Simulation Basics](../sim-basics/) – Understand simulation workflow 
+- [Sim-to-Real Deployment](../sim2real-deploy/) – Deploy policies to real robot 
 
 ---
 
@@ -22,25 +22,25 @@ Follow the tutorials in order:
 
 By completing these tutorials, you will be able to:
 
-- Set up the PI Plus development environment  
-- Run the robot or simulation system  
-- Control the robot safely  
-- Understand the simulation pipeline  
-- Transfer from simulation to real-world execution  
+- Set up the PI Plus development environment 
+- Run the robot or simulation system 
+- Control the robot safely 
+- Understand the simulation pipeline 
+- Transfer from simulation to real-world execution 
 
 ---
 
 ## How to Use
 
-1. Start from **Setup** if you are new  
-2. Follow the tutorials sequentially  
-3. Refer to the **Reference Documentation** for detailed explanations  
-4. Use troubleshooting resources if issues occur  
+1. Start from **Setup** if you are new 
+2. Follow the tutorials sequentially 
+3. Refer to the **Reference Documentation** for detailed explanations 
+4. Use troubleshooting resources if issues occur 
 
 ---
 
 ## Notes
 
-- Basic knowledge of Linux and ROS is recommended  
-- Always follow safety procedures when operating real hardware  
-- Configuration files (e.g., `robot_param.yaml`, `joints.yaml`) are critical for correct behavior  
+- Basic knowledge of Linux and ROS is recommended 
+- Always follow safety procedures when operating real hardware 
+- Configuration files (e.g., `robot_param.yaml`, `joints.yaml`) are critical for correct behavior 

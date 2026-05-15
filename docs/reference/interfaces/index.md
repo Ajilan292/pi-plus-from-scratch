@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document describes the external interfaces of the PI Plus software system.  
+This document describes the external interfaces of the PI Plus software system. 
 All robot interactions are performed through ROS2 topics and services, centered around the middleware (`hightorque_midware_node`).
 
 Interfaces are divided into three categories:

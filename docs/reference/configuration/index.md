@@ -65,11 +65,11 @@ The PI Plus configuration system can be understood as four connected layers:
 
 ```text
 robot_type
-   ↓
+ ↓
 robot_param.yaml
-   ↓
+ ↓
 joints.yaml
-   ↓
+ ↓
 URDF / robot description
 ```
 
@@ -109,16 +109,16 @@ At the robot level:
 
 ```yaml
 robot:
-  SDK_version: 2
-  robot_name: "PiPlus_S-12L10A2G1H0W"
-  name: "PiPlus_S-12L10A2G1H0W"
-  arm_dof: 6
-  leg_dof: 6
-  Serial_Type: "/dev/ttyACM"
-  Seial_baudrate: 4000000
-  canport_error_output_flag: false
-  CAN_Type: "CAN-FD BRS"
-  control_type: 12
+ SDK_version: 2
+ robot_name: "PiPlus_S-12L10A2G1H0W"
+ name: "PiPlus_S-12L10A2G1H0W"
+ arm_dof: 6
+ leg_dof: 6
+ Serial_Type: "/dev/ttyACM"
+ Seial_baudrate: 4000000
+ canport_error_output_flag: false
+ CAN_Type: "CAN-FD BRS"
+ control_type: 12
 ```
 
 This level defines the global communication and runtime identity of the robot.
@@ -132,8 +132,8 @@ Example structure:
 ```text
 Robot
  └── CANboard
-      └── CANport
-           └── motor
+ └── CANport
+ └── motor
 ```
 
 In the provided example:
@@ -170,10 +170,10 @@ Example:
 
 ```yaml
 motor1:
-  type: "5047_36_2"
-  id: 1
-  name: "l_ankle_roll_joint"
-  num: 1
+ type: "5047_36_2"
+ id: 1
+ name: "l_ankle_roll_joint"
+ num: 1
 ```
 
 This is the key mapping layer between:
@@ -184,7 +184,7 @@ This is the key mapping layer between:
 
 ### Why It Matters
 
-`robot_param.yaml` defines how the software sees the actual hardware layout.  
+`robot_param.yaml` defines how the software sees the actual hardware layout. 
 Without it, the runtime system would not know:
 
 - Which motors are on which bus
@@ -233,21 +233,21 @@ These values define the allowable peak power envelope for the robot.
 
 ```yaml
 kinematics_plugin:
-  name: ""
+ name: ""
 ```
 
-This field indicates whether a kinematics plugin is configured.  
+This field indicates whether a kinematics plugin is configured. 
 In the provided example, no plugin is specified.
 
 #### Joint Names
 
 ```yaml
 joint_names: [
-  "l_ankle_roll_joint", "l_ankle_pitch_joint", "l_calf_joint", "l_thigh_joint", "l_hip_roll_joint", "l_hip_pitch_joint",
-  "r_ankle_roll_joint", "r_ankle_pitch_joint", "r_calf_joint", "r_thigh_joint", "r_hip_roll_joint", "r_hip_pitch_joint",
-  "l_shoulder_pitch_joint", "l_shoulder_roll_joint", "l_upper_arm_joint", "l_elbow_joint", "l_wrist_joint", "l_claw_joint",
-  "r_shoulder_pitch_joint", "r_shoulder_roll_joint", "r_upper_arm_joint", "r_elbow_joint", "r_wrist_joint", "r_claw_joint",
-  "head_yaw_joint"
+ "l_ankle_roll_joint", "l_ankle_pitch_joint", "l_calf_joint", "l_thigh_joint", "l_hip_roll_joint", "l_hip_pitch_joint",
+ "r_ankle_roll_joint", "r_ankle_pitch_joint", "r_calf_joint", "r_thigh_joint", "r_hip_roll_joint", "r_hip_pitch_joint",
+ "l_shoulder_pitch_joint", "l_shoulder_roll_joint", "l_upper_arm_joint", "l_elbow_joint", "l_wrist_joint", "l_claw_joint",
+ "r_shoulder_pitch_joint", "r_shoulder_roll_joint", "r_upper_arm_joint", "r_elbow_joint", "r_wrist_joint", "r_claw_joint",
+ "head_yaw_joint"
 ]
 ```
 
@@ -441,13 +441,13 @@ Together, these files allow the runtime stack to map:
 
 ```text
 Software joint command
-    ↓
+ ↓
 Joint semantic definition
-    ↓
+ ↓
 Motor mapping
-    ↓
+ ↓
 CAN motor device
-    ↓
+ ↓
 Physical robot motion
 ```
 
@@ -461,13 +461,13 @@ At startup, the runtime system typically follows this sequence:
 2. Resolve `robot_type`
 3. Locate the matching configuration directory
 4. Load:
-   - `robot_param.yaml`
-   - `joints.yaml`
-   - `custom_action.yaml` (if used)
+ - `robot_param.yaml`
+ - `joints.yaml`
+ - `custom_action.yaml` (if used)
 5. Initialize middleware and drivers
 6. Begin robot runtime
 
-This means the configuration system is not static documentation.  
+This means the configuration system is not static documentation. 
 It is actively consumed by the runtime stack during system initialization.
 
 ---

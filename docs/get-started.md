@@ -14,9 +14,9 @@ PI Plus is a humanoid robot platform designed for research, development, and edu
 
 It provides:
 
-- A complete hardware system  
-- A standardized control interface  
-- Support for simulation and real-world deployment  
+- A complete hardware system 
+- A standardized control interface 
+- Support for simulation and real-world deployment 
 
 ---
 
@@ -24,9 +24,9 @@ It provides:
 
 Make sure:
 
-- The robot is placed on a stable surface  
-- The battery is installed correctly  
-- The environment is clear of obstacles  
+- The robot is placed on a stable surface 
+- The battery is installed correctly 
+- The environment is clear of obstacles 
 
 ---
 
@@ -36,51 +36,51 @@ Depending on your goal, start from one of the following sections:
 
 ---
 
-### 🚀 First Run
+### First Run
 
 Get the robot up and running for the first time:
 
-- Power on the robot  
-- Bring up the system  
-- Make the robot stand and move  
+- Power on the robot 
+- Bring up the system 
+- Make the robot stand and move 
 
-👉 [Go to First Run](tutorials/first-run/index.md)
+ [Go to First Run](tutorials/first-run/index.md)
 
 ---
 
-### 🎮 Teleoperation
+### Teleoperation
 
 Learn how to control the robot using a controller:
 
-- Controller layout  
-- Movement control  
-- Mode switching  
+- Controller layout 
+- Movement control 
+- Mode switching 
 
-👉 [Go to Teleoperation](tutorials/safety-and-teleop/index.md)
+ [Go to Teleoperation](tutorials/safety-and-teleop/index.md)
 
 ---
 
-### ⚙️ Bringup System
+### Bringup System
 
 Understand how the system is initialized:
 
-- System architecture  
-- Core runtime nodes  
-- Configuration structure  
+- System architecture 
+- Core runtime nodes 
+- Configuration structure 
 
-👉 [Go to Bringup](tutorials/bringup/index.md)
+ [Go to Bringup](tutorials/bringup/index.md)
 
 ---
 
-### 🔒 Safety Guidelines
+### Safety Guidelines
 
 Understand safe operation principles:
 
-- Safety rules  
-- Emergency stop  
-- Operating precautions  
+- Safety rules 
+- Emergency stop 
+- Operating precautions 
 
-👉 [Go to Safety](tutorials/safety-and-teleop/index.md)
+ [Go to Safety](tutorials/safety-and-teleop/index.md)
 
 ---
 
@@ -88,8 +88,8 @@ Understand safe operation principles:
 
 PI Plus documentation is organized into:
 
-- **Tutorials** → Step-by-step operation  
-- **Reference** → System details and parameters  
-- **Explanation** → Design concepts  
+- **Tutorials** → Step-by-step operation 
+- **Reference** → System details and parameters 
+- **Explanation** → Design concepts 
 
 Start with *First Run* to quickly experience the system.
