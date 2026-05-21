@@ -166,3 +166,90 @@ The left homepage navigation and the normal MkDocs left/right navigation panels 
 - Removed emoji icons from normal documentation content and table-of-contents headings.
 - Homepage decorative icons are kept.
 - Changed the selected item color in the left navigation from deep blue to a light-blue active state.
+
+
+### Mobile drawer fix v5
+
+Fixed Material for MkDocs mobile drawer overlap by restoring a phone-specific drawer layout:
+- removed desktop card/sticky constraints inside the drawer;
+- restored a separate title bar and repository/source block;
+- reset mobile nav row heights and wrapping;
+- kept the light-blue active item style.
+
+
+### Navigation and link cleanup v6
+
+- Removed empty technical directory index files from `docs/assets`, `docs/images`, `docs/javascripts`, and `docs/stylesheets`.
+- Moved the old Markdown homepage backup to `archive/index_old_home.md`.
+- Added real unreferenced content pages to `mkdocs.yml` navigation:
+  - `explanation/control-system.md`
+  - `reference/api.md`
+  - `reference/faq.md`
+  - `reference/troubleshooting.md`
+  - `reference/changelog.md`
+- Fixed relative links in `reference/index.md` and `tutorials/intro/index.md`.
+
+
+### Split-screen TOC fix v7
+
+When the browser is half-width on desktop, the right Table of Contents is now hidden earlier at `max-width: 1220px`. The article content is then allowed to occupy the full available width, preventing the directory/content clipping shown in split-screen mode.
+
+
+### Force TOC collapse v8
+
+For split-screen desktop windows, the right-side Table of Contents now collapses earlier at `max-width: 1700px`. The patch removes not only the visual TOC, but also its layout width, flex basis, padding, margin, and reserved sidebar space.
+
+
+### Force left navigation collapse v9
+
+The persistent left navigation is now removed from the normal layout in split-screen widths. On tablet/mobile widths, it is only shown when the hamburger drawer checkbox is open; otherwise it is translated off-canvas and does not occupy layout space.
+
+
+### Drawer and Reference navigation cleanup v10
+
+- Kept homepage navigation structure unchanged.
+- Removed `API`, `FAQ`, `Troubleshooting`, and `Changelog` from the Reference navigation and moved the placeholder files outside `docs/`.
+- Removed `navigation.indexes` to reduce duplicate mobile drawer entries.
+- Fixed split-screen drawer title overlap by hiding the logo inside the drawer title area.
+- Restored visible back/parent button behavior in the mobile drawer.
+- Added a mobile-only rule to hide duplicated active leaf rows such as `Hardware -> Hardware`.
+
+
+### Strict navigation index v11
+
+Navigation is now standardized across the homepage and MkDocs drawer:
+
+- Home
+  - Get Started
+- Tutorials
+  - First Run
+  - Setup
+  - Safety & Teleoperation
+  - Bringup
+  - Simulation Basics
+  - Sim2Real Deployment
+  - Troubleshooting
+- Reference
+  - Hardware
+  - Software
+  - Interfaces
+  - Configuration
+- Explanation
+  - Sim2Real Theory
+  - Design Principles
+- Changelogs
+  - Releases
+
+The homepage sidebar uses clickable section titles. The MkDocs navigation was rebuilt to the same structure, with `navigation.indexes` enabled so section index titles can act as links where Material supports it.
+
+
+### Logo and drawer Home link v12
+
+- Replaced the site logo with the uploaded `2.png` file.
+- Kept the same asset path `docs/assets/ht-logo-trademark.png` so homepage and Material pages both use the new trademark.
+- Added a JavaScript-injected `← Home` link inside nested Material drawer levels, so users can return directly to Home after entering Tutorials / Reference / Explanation subdirectories in split-screen or mobile drawer mode.
+
+
+### Drawer Home link visibility v13
+
+The injected `← Home` link is now only created and shown at split-screen / drawer widths (`max-width: 1220px`). On full-width desktop, the extra `← Home` links are removed and hidden, so the normal sidebar stays clean.

@@ -10,11 +10,11 @@ It is designed to help users go from initial setup to real robot deployment, wit
 
 Follow the tutorials in order:
 
-- [Setup](../setup/) – Install environment and prepare dependencies 
-- [First Run](../first-run/) – Launch the system and verify basic functionality 
-- [Safety & Teleoperation](../safety-and-teleop/) – Safe operation and manual control 
-- [Simulation Basics](../sim-basics/) – Understand simulation workflow 
-- [Sim-to-Real Deployment](../sim2real-deploy/) – Deploy policies to real robot 
+- [Setup](../setup/index.md) – Install environment and prepare dependencies 
+- [First Run](../first-run/index.md) – Launch the system and verify basic functionality 
+- [Safety & Teleoperation](../safety-and-teleop/index.md) – Safe operation and manual control 
+- [Simulation Basics](../sim-basics/index.md) – Understand simulation workflow 
+- [Sim-to-Real Deployment](../sim2real-deploy/index.md) – Deploy policies to real robot 
 
 ---
 
