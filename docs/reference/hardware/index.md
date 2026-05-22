@@ -1,6 +1,6 @@
 # Hardware
 
-![PI Plus Robot](../../images/system/pi_plus_overview.png)
+![Mini Pi plus Robot](../../images/system/pi_plus_overview.png)
 
 ## Overview
 

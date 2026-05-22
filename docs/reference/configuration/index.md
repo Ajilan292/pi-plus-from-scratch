@@ -2,7 +2,7 @@
 
 ## Overview
 
-The PI Plus configuration system defines how the robot is identified, described, mapped to hardware, and constrained at runtime.
+The Mini Pi plus configuration system defines how the robot is identified, described, mapped to hardware, and constrained at runtime.
 
 In this software stack, configuration is not a single file. It is composed of several coordinated layers:
 
@@ -61,7 +61,7 @@ This mechanism allows one software stack to support multiple robot variants with
 
 ## Configuration Layers
 
-The PI Plus configuration system can be understood as four connected layers:
+The Mini Pi plus configuration system can be understood as four connected layers:
 
 ```text
 robot_type
@@ -484,7 +484,7 @@ Different variants can differ in:
 - CAN bus grouping
 - Control gains and offsets
 
-This is one of the main strengths of the PI Plus software design.
+This is one of the main strengths of the Mini Pi plus software design.
 
 ---
 
@@ -531,7 +531,7 @@ If commanded motion is unexpectedly clamped, inspect:
 
 ## Summary
 
-The PI Plus configuration system is composed of multiple coordinated layers:
+The Mini Pi plus configuration system is composed of multiple coordinated layers:
 
 - `robot_type` selects the robot variant
 - `robot_param.yaml` defines the hardware communication layout

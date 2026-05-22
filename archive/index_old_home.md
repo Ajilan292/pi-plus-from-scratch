@@ -7,9 +7,9 @@ hide:
  <div class="landing-overlay"></div>
 
  <div class="landing-content">
- <div class="landing-badge">PI Plus From Scratch</div>
- <h1>PI Plus: Your Desktop Humanoid Companion</h1>
- <p class="landing-subtitle">Complete guide for learning PI Plus robot from scratch</p>
+ <div class="landing-badge">Mini Pi plus From Scratch</div>
+ <h1>Mini Pi plus: Your Desktop Humanoid Companion</h1>
+ <p class="landing-subtitle">Complete guide for learning Mini Pi plus robot from scratch</p>
 
  <div class="landing-cta">
  <a class="btn-primary" href="get-started/">Get Started</a>
@@ -18,7 +18,7 @@ hide:
  </div>
 </div>
 
-## Why PI Plus
+## Why Mini Pi plus
 
 <div class="grid-4">
  <div class="card">
@@ -61,11 +61,11 @@ hide:
 <div class="grid-4">
  <a class="pcard" href="tutorials/intro/">
  <div class="pcard-title">Intro</div>
- <div class="pcard-desc">Get familiar with PI Plus platform and concepts.</div>
+ <div class="pcard-desc">Get familiar with Mini Pi plus platform and concepts.</div>
  </a>
  <a class="pcard" href="tutorials/setup/">
  <div class="pcard-title">Setup</div>
- <div class="pcard-desc">Complete setup instructions for your PI Plus robot.</div>
+ <div class="pcard-desc">Complete setup instructions for your Mini Pi plus robot.</div>
  </a>
  <a class="pcard" href="tutorials/safety-and-teleop/">
  <div class="pcard-title">Safety & Teleop</div>
@@ -96,7 +96,7 @@ hide:
 
 <div class="cta-band">
  <div>
- <div class="cta-title">Ready to start your PI Plus journey?</div>
+ <div class="cta-title">Ready to start your Mini Pi plus journey?</div>
  <div class="cta-desc">Begin with our comprehensive tutorials and build your skills step by step.</div>
  </div>
  <a class="btn-primary" href="tutorials/intro/">Start Learning</a>

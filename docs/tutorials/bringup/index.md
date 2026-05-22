@@ -1,6 +1,6 @@
 # Bringup
 
-This section explains how the `hightorque_bringup` package organizes the robot runtime environment and starts the core runtime nodes required by the PI Plus system.
+This section explains how the `hightorque_bringup` package organizes the robot runtime environment and starts the core runtime nodes required by the Mini Pi plus system.
 
 The bringup process is responsible for:
 

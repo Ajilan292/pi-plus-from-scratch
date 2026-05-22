@@ -1,6 +1,6 @@
 # Tutorials
 
-This section provides a step-by-step learning path for using the PI Plus platform.
+This section provides a step-by-step learning path for using the Mini Pi plus platform.
 
 It is designed to help users go from initial setup to real robot deployment, with a focus on practical execution.
 
@@ -22,7 +22,7 @@ Follow the tutorials in order:
 
 By completing these tutorials, you will be able to:
 
-- Set up the PI Plus development environment 
+- Set up the Mini Pi plus development environment 
 - Run the robot or simulation system 
 - Control the robot safely 
 - Understand the simulation pipeline 

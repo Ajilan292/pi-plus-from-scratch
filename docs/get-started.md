@@ -1,16 +1,16 @@
 # Get Started
 
-![PI Plus Robot](images/system/pi_plus_overview.png)
+![Mini Pi plus Robot](images/system/pi_plus_overview.png)
 
-Welcome to the PI Plus documentation.
+Welcome to the Mini Pi plus documentation.
 
 This page helps you understand the system and guides you to the appropriate starting point.
 
 ---
 
-## What is PI Plus
+## What is Mini Pi plus
 
-PI Plus is a humanoid robot platform designed for research, development, and education.
+Mini Pi plus is a humanoid robot platform designed for research, development, and education.
 
 It provides:
 
@@ -86,7 +86,7 @@ Understand safe operation principles:
 
 ## Summary
 
-PI Plus documentation is organized into:
+Mini Pi plus documentation is organized into:
 
 - **Tutorials** → Step-by-step operation 
 - **Reference** → System details and parameters 

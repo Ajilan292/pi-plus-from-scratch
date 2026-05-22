@@ -1,95 +1,79 @@
 /* =========================================
-   HighTorque Docs Theme - V7 Reference Strict / Horizontal / Responsive
-   Design goal:
-   1) Match the provided reference direction as closely as possible using CSS only
-   2) Keep overall page structure and existing HTML classes
-   3) Horizontal desktop-first experience
-   4) Responsive on tablet and mobile
+   HighTorque Docs - Material pages refinement
+   Applies to normal MkDocs documentation pages.
+   Homepage uses docs/index.html + home-static.css separately.
    ========================================= */
 
 :root {
-  --ht-blue-1: #0b58f4;
-  --ht-blue-2: #2f76ff;
-  --ht-blue-3: #73a9ff;
+  --ht-blue-1: #0653f5;
+  --ht-blue-2: #2872ff;
+  --ht-blue-3: #79adff;
   --ht-text-1: #0f172a;
   --ht-text-2: #1f2937;
-  --ht-line-1: #dbe3f0;
-  --ht-line-2: #e7edf6;
-  --ht-shadow-1: 0 8px 24px rgba(15, 23, 42, .06);
+  --ht-text-3: #4b5563;
+  --ht-line: #dbe4f2;
+  --ht-bg: #f3f7fc;
+
+  --md-primary-fg-color: #0b5cf0;
+  --md-primary-fg-color--light: #347bff;
+  --md-accent-fg-color: #0b5cf0;
 }
 
-/* ===== Base background ===== */
+/* Page shell */
 html,
-body {
-  background: #f5f7fb !important;
-}
-
+body,
+.md-container,
 .md-main {
   background:
-    radial-gradient(1200px 480px at 78% 0%, rgba(54, 117, 246, .06), rgba(54, 117, 246, 0) 62%),
-    linear-gradient(180deg, #edf2f9 0%, #f7f9fc 42%, #ffffff 100%) !important;
+    radial-gradient(1000px 420px at 72% 0%, rgba(40,114,255,.07), rgba(40,114,255,0) 66%),
+    linear-gradient(180deg, #edf3fb 0%, #f8fbff 42%, #ffffff 100%) !important;
 }
 
-.md-content {
-  background: transparent !important;
-}
-
-.md-main__inner {
+.md-main__inner.md-grid {
   max-width: 1440px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  gap: 1.4rem !important;
+  gap: 1.35rem !important;
+  padding-top: 1.35rem !important;
 }
 
-.md-content,
-.md-content__inner {
-  max-width: none !important;
-}
-
-.md-content__inner {
-  background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(250,252,255,1)) !important;
-  border: 1px solid var(--ht-line-1);
-  border-radius: 0 !important;
-  padding: 1.15rem 1.35rem !important;
-  box-shadow: var(--ht-shadow-1), inset 0 1px 0 rgba(255,255,255,.95);
-}
-
-/* ===== Header ===== */
+/* Header */
 .md-header,
 .md-tabs {
   background:
-    linear-gradient(180deg, rgba(255,255,255,.13) 0%, rgba(255,255,255,0) 48%),
-    linear-gradient(90deg, #0a52ea 0%, #2d72ff 48%, #79acff 100%) !important;
-  color: rgba(255,255,255,.98) !important;
-  border-bottom: 1px solid rgba(255,255,255,.16);
-  box-shadow: 0 8px 24px rgba(11, 88, 244, .18) !important;
+    linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,0) 50%),
+    linear-gradient(90deg, var(--ht-blue-1) 0%, var(--ht-blue-2) 50%, var(--ht-blue-3) 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 26px rgba(18,83,195,.18) !important;
 }
 
 .md-tabs {
   display: none !important;
 }
 
-.md-header__inner,
-.md-header__button,
+.md-header__inner.md-grid {
+  max-width: 1440px !important;
+}
+
 .md-header__title,
 .md-header__topic,
+.md-header__button,
 .md-header__source {
   color: rgba(255,255,255,.98) !important;
 }
 
 .md-header__title {
-  font-weight: 800 !important;
-  letter-spacing: -.01em;
+  font-weight: 850 !important;
+  letter-spacing: -.02em;
 }
 
-.md-logo img {
+.md-logo img,
+.md-logo svg {
   width: auto !important;
   height: 38px !important;
-  max-width: 168px !important;
+  max-width: 132px !important;
   object-fit: contain !important;
 }
 
-/* ===== Search pill ===== */
+/* Search */
 .md-search,
 .md-search__form,
 .md-search__input {
@@ -100,37 +84,33 @@ body {
   background: rgba(255,255,255,.86) !important;
   border: 1px solid rgba(255,255,255,.78) !important;
   box-shadow:
-    0 6px 16px rgba(15, 56, 130, .14),
-    inset 0 1px 0 rgba(255,255,255,.92);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+    0 8px 18px rgba(15,56,130,.15),
+    inset 0 1px 0 rgba(255,255,255,.90);
 }
 
 .md-search__input {
   background: transparent !important;
-  color: rgba(31, 41, 55, .88) !important;
+  color: #1f2937 !important;
 }
 
 .md-search__input::placeholder {
-  color: rgba(100, 116, 139, .78) !important;
+  color: rgba(92,107,130,.78) !important;
 }
 
-.md-header.is-scrolled {
-  box-shadow: 0 10px 28px rgba(11, 88, 244, .22) !important;
-}
-
-/* ===== Left sidebar ===== */
-.md-sidebar--primary {
-  top: 0 !important;
+/* Sidebars */
+.md-sidebar--primary,
+.md-sidebar--secondary {
   background: transparent !important;
 }
 
-.md-sidebar--primary .md-sidebar__scrollwrap {
+.md-sidebar--primary .md-sidebar__scrollwrap,
+.md-sidebar--secondary .md-sidebar__scrollwrap {
   background: rgba(255,255,255,.98) !important;
-  border: 1px solid var(--ht-line-1);
+  border: 1px solid var(--ht-line);
   border-radius: 14px;
-  box-shadow: var(--ht-shadow-1), inset 0 1px 0 rgba(255,255,255,.95);
-  overflow: hidden !important;
+  box-shadow:
+    0 16px 36px rgba(15,23,42,.07),
+    inset 0 1px 0 rgba(255,255,255,.96);
 }
 
 .md-sidebar--primary .md-sidebar__inner,
@@ -142,45 +122,32 @@ body {
   background: transparent !important;
 }
 
-.md-sidebar--primary .md-sidebar__scrollwrap,
-.md-sidebar--primary .md-sidebar__inner,
-.md-sidebar--primary .md-nav {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-
 .md-nav--primary .md-nav__title {
   position: static !important;
   top: auto !important;
-  z-index: auto !important;
   box-shadow: none !important;
-  background: transparent !important;
   color: var(--ht-text-1) !important;
   font-weight: 900 !important;
 }
 
-.md-sidebar--primary,
-.md-sidebar--primary .md-nav__title,
 .md-sidebar--primary .md-nav__link,
-.md-sidebar--primary .md-nav__item {
+.md-sidebar--secondary .md-nav__link {
   color: var(--ht-text-2) !important;
+  border-radius: 7px;
 }
 
-.md-sidebar--primary .md-nav__link {
-  border-radius: 8px;
-}
-
-.md-sidebar--primary .md-nav__link:hover {
+.md-sidebar--primary .md-nav__link:hover,
+.md-sidebar--secondary .md-nav__link:hover {
   color: var(--ht-blue-1) !important;
-  background: rgba(47, 118, 255, .08) !important;
+  background: rgba(31,106,242,.08) !important;
 }
 
 .md-sidebar--primary .md-nav__link--active,
 .md-sidebar--primary .md-nav__item--active > .md-nav__link {
-  color: #fff !important;
-  font-weight: 800 !important;
-  background: linear-gradient(90deg, #1b67f7 0%, #5f95ff 100%) !important;
-  box-shadow: 0 8px 18px rgba(31,106,242,.20);
+  color: #0b5cf0 !important;
+  font-weight: 850 !important;
+  background: linear-gradient(90deg, #eaf2ff 0%, #dbeafe 100%) !important;
+  box-shadow: inset 0 0 0 1px rgba(31,106,242,.16), 0 6px 14px rgba(31,106,242,.10);
 }
 
 .md-sidebar--primary .md-nav__item--active > .md-nav__link {
@@ -188,331 +155,847 @@ body {
   padding-left: var(--md-nav-indent);
 }
 
-/* ===== Right sidebar ===== */
-.md-sidebar--secondary {
-  background: transparent !important;
+.md-nav__title {
+  color: var(--ht-text-1) !important;
 }
 
-.md-sidebar--secondary .md-sidebar__scrollwrap {
-  background: rgba(255,255,255,.96) !important;
-  border: 1px solid var(--ht-line-2);
+/* Main article card */
+.md-content__inner {
+  margin-top: 0 !important;
+  padding: 2.1rem 2.35rem 2.6rem 2.35rem !important;
+  background: rgba(255,255,255,.98) !important;
+  border: 1px solid var(--ht-line);
   border-radius: 14px;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, .05);
+  box-shadow:
+    0 16px 36px rgba(15,23,42,.06),
+    inset 0 1px 0 rgba(255,255,255,.96);
 }
 
-.md-sidebar--secondary .md-nav__title {
-  background: transparent !important;
-}
-
-/* ===== Hero ===== */
-.landing-hero {
-  position: relative;
-  height: clamp(460px, 35vw, 620px);
-  min-height: 460px;
-  max-height: 620px;
-  border-radius: 0 !important;
-  overflow: hidden;
-  margin: 0 0 1.6rem 0;
-  background-color: #f7f9fd;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: 1px solid var(--ht-line-1);
-  box-shadow: none;
-}
-
-.landing-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: saturate(.76) contrast(.94) brightness(1.20);
-}
-
-.landing-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg,
-      rgba(255,255,255,.95) 0%,
-      rgba(255,255,255,.86) 36%,
-      rgba(255,255,255,.54) 66%,
-      rgba(255,255,255,.24) 100%),
-    radial-gradient(760px 420px at 74% 34%, rgba(31,106,242,.12), rgba(31,106,242,0) 68%);
-}
-
-.landing-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0) 28%);
-}
-
-.landing-content {
-  position: relative;
-  z-index: 2;
-  padding: clamp(28px, 4vw, 64px);
-  max-width: 760px;
-}
-
-.landing-badge {
-  display: inline-block;
-  padding: 7px 12px;
-  border: 1px solid rgba(148, 163, 184, .46);
-  border-radius: 999px;
-  color: rgba(31, 41, 55, .88);
-  font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 18px;
-  background: rgba(255,255,255,.82);
-  box-shadow: 0 4px 10px rgba(15, 23, 42, .05), inset 0 1px 0 rgba(255,255,255,.95);
-}
-
-.landing-content h1 {
-  color: #040915;
-  font-size: clamp(40px, 4.6vw, 68px);
-  line-height: 1.06;
-  margin: 0 0 20px 0;
-  letter-spacing: -0.048em;
-  font-weight: 900;
-  text-shadow: none;
-}
-
-.landing-content h1::after {
-  content: "";
-  display: block;
-  width: 52px;
-  height: 3px;
-  margin-top: 20px;
-  border-radius: 999px;
-  background: var(--ht-blue-1);
-}
-
-.landing-subtitle {
-  color: rgba(31, 41, 55, .88);
-  font-size: clamp(17px, 1.48vw, 21px);
-  line-height: 1.5;
-  margin: 0 0 26px 0;
-  max-width: 31em;
-  font-weight: 500;
-}
-
-/* ===== Buttons ===== */
-.landing-cta {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-.btn-primary,
-.btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 48px;
-  padding: 0 22px;
-  border-radius: 999px;
-  font-weight: 800;
-  text-decoration: none !important;
-}
-
-.btn-primary {
-  background: linear-gradient(90deg, #0b5cf0 0%, #327aff 100%);
-  color: #fff !important;
-  border: 1px solid rgba(255,255,255,.32);
-  box-shadow: 0 12px 26px rgba(31,106,242,.24), inset 0 1px 0 rgba(255,255,255,.26);
-}
-
-.btn-ghost {
-  background: rgba(255,255,255,.78);
-  border: 1px solid rgba(148, 163, 184, .52);
-  color: #111827 !important;
-  box-shadow: 0 8px 18px rgba(31,41,55,.06), inset 0 1px 0 rgba(255,255,255,.96);
-}
-
-.btn-primary:hover,
-.btn-ghost:hover {
-  transform: translateY(-1px);
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-
-/* ===== Grid cards ===== */
-.grid-4,
-.grid-3 {
-  display: grid;
-  gap: 16px;
-  margin: 16px 0 30px 0;
-}
-
-.grid-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.grid-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.card,
-.pcard,
-.icon-card {
-  border: 1px solid var(--ht-line-1);
-  border-radius: 14px;
-  padding: 18px;
-  background: rgba(255,255,255,.98);
-  box-shadow: 0 10px 28px rgba(31, 41, 55, .05), inset 0 1px 0 rgba(255,255,255,.96);
-}
-
-.card-title,
-.pcard-title,
-.icon-card-title {
-  font-weight: 900;
-  margin-bottom: 7px;
-  color: var(--ht-text-1);
-}
-
-.card-desc,
-.pcard-desc,
-.icon-card-desc {
-  color: rgba(75, 85, 99, .88);
-  font-size: 14px;
-  line-height: 1.55;
-}
-
-.pcard {
-  display: block;
-  text-decoration: none !important;
-  color: inherit;
-  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
-}
-
-.pcard:hover {
-  transform: translateY(-2px);
-  border-color: rgba(31,106,242,.34);
-  box-shadow: 0 16px 34px rgba(31,41,55,.09), inset 0 1px 0 rgba(255,255,255,.98);
-}
-
-/* ===== CTA band ===== */
-.cta-band {
-  margin-top: 22px;
-  padding: 18px;
-  border-radius: 14px;
-  border: 1px solid var(--ht-line-1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  background: linear-gradient(90deg, rgba(31,106,242,.08), rgba(255,255,255,.98), rgba(255,255,255,.90));
-  box-shadow: 0 10px 26px rgba(31, 41, 55, .05), inset 0 1px 0 rgba(255,255,255,.96);
-}
-
-.cta-title {
-  font-weight: 900;
-  color: var(--ht-text-1);
-}
-
-.cta-desc {
-  color: rgba(75, 85, 99, .88);
-  font-size: 14px;
-}
-
-button[aria-label="回到页面顶部"] {
+.md-content__inner::before {
   display: none !important;
 }
 
-/* ===== Tablet ===== */
-@media screen and (max-width: 1220px) {
-  .md-main__inner {
-    max-width: 1180px !important;
-    gap: 1rem !important;
-  }
-
-  .landing-hero {
-    height: clamp(420px, 44vw, 560px);
-    min-height: 420px;
-  }
-
-  .landing-content h1 {
-    font-size: clamp(34px, 4.2vw, 58px);
-  }
-
-  .grid-4 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .grid-3 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+/* Typography */
+.md-typeset {
+  color: var(--ht-text-2);
+  font-size: .78rem;
+  line-height: 1.7;
 }
 
-/* ===== Mobile ===== */
+.md-typeset h1 {
+  margin: 0 0 1.35rem 0;
+  color: #050914;
+  font-weight: 920;
+  letter-spacing: -.045em;
+}
+
+.md-typeset h2 {
+  color: var(--ht-text-1);
+  font-weight: 880;
+  letter-spacing: -.025em;
+  border-bottom: 1px solid #e5edf7;
+  padding-bottom: .42rem;
+}
+
+.md-typeset h3 {
+  color: var(--ht-text-1);
+  font-weight: 820;
+}
+
+.md-typeset a {
+  color: var(--ht-blue-1);
+  font-weight: 650;
+}
+
+.md-typeset code {
+  border-radius: 6px;
+}
+
+.md-typeset pre > code {
+  border-radius: 12px;
+}
+
+.md-typeset img {
+  border-radius: 12px;
+  border: 1px solid #e0e7f2;
+  box-shadow: 0 12px 28px rgba(15,23,42,.06);
+}
+
+.md-typeset table:not([class]) {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(15,23,42,.05);
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(15,23,42,.04);
+}
+
+/* Footer */
+.md-footer {
+  background: #f3f7fc !important;
+}
+
+.md-footer-meta {
+  background: #eaf1fb !important;
+}
+
+/* Responsive */
 @media screen and (max-width: 76.25em) {
-  .md-main {
-    background: linear-gradient(180deg, #eef3fa 0%, #ffffff 100%) !important;
+  .md-main__inner.md-grid {
+    padding-top: 0 !important;
   }
 
   .md-content__inner {
     border-radius: 0 !important;
-    padding: 0.9rem !important;
+    border-left: 0;
+    border-right: 0;
+    padding: 1.25rem 1rem 2rem 1rem !important;
+    box-shadow: none;
   }
 
-  .landing-hero {
-    height: auto !important;
-    min-height: 420px;
-    max-height: none;
-    border-radius: 0 !important;
+  .md-typeset h1 {
+    font-size: 1.65rem;
+    letter-spacing: -.035em;
   }
 
-  .landing-content {
-    padding: 26px 22px 28px 22px;
-    max-width: 100%;
-  }
-
-  .landing-content h1 {
-    font-size: clamp(32px, 8vw, 44px);
-    line-height: 1.08;
-  }
-
-  .landing-subtitle {
-    font-size: 16px;
-    max-width: 100%;
-  }
-
-  .grid-4,
-  .grid-3 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-
-  .md-sidebar--primary .md-sidebar__scrollwrap,
-  .md-sidebar--primary .md-sidebar__inner,
-  .md-sidebar--primary .md-nav {
+  .md-sidebar--primary .md-sidebar__scrollwrap {
     background: rgba(255,255,255,.98) !important;
   }
+}
 
-  .md-sidebar--primary,
-  .md-sidebar--primary .md-nav__title,
-  .md-sidebar--primary .md-nav__link,
-  .md-sidebar--primary .md-nav__item,
-  .md-nav--primary .md-nav__link,
-  .md-nav--primary .md-nav__title,
-  .md-nav--primary .md-nav__item,
-  .md-nav--primary .md-nav__source {
-    color: rgba(31, 41, 55, .92) !important;
+@media screen and (max-width: 700px) {
+  .md-header__title {
+    font-size: .82rem !important;
   }
 
-  .md-nav--primary .md-nav__link:hover,
-  .md-sidebar--primary .md-nav__link:hover {
-    color: var(--ht-blue-1) !important;
+  .md-logo img,
+  .md-logo svg {
+    max-width: 96px !important;
+    height: 34px !important;
+  }
+
+  .md-typeset {
+    font-size: .74rem;
+  }
+}
+
+/* =========================================
+   Sidebar alignment patch for normal documentation pages
+   Align left/right navigation cards with the central content card.
+   ========================================= */
+.md-sidebar--primary,
+.md-sidebar--secondary {
+  padding-top: 0 !important;
+}
+
+.md-sidebar--primary .md-sidebar__scrollwrap,
+.md-sidebar--secondary .md-sidebar__scrollwrap {
+  margin-top: 0 !important;
+  min-height: calc(100vh - var(--md-header-height, 64px) - 2.7rem) !important;
+  max-height: calc(100vh - var(--md-header-height, 64px) - 2.7rem) !important;
+  overflow-y: auto !important;
+}
+
+.md-main__inner.md-grid {
+  align-items: flex-start !important;
+}
+
+.md-content__inner {
+  min-height: calc(100vh - var(--md-header-height, 64px) - 2.7rem) !important;
+}
+
+/* Narrow screens use drawer behavior, so do not force fixed heights. */
+@media screen and (max-width: 76.25em) {
+  .md-sidebar--primary .md-sidebar__scrollwrap,
+  .md-sidebar--secondary .md-sidebar__scrollwrap,
+  .md-content__inner {
+    min-height: auto !important;
+    max-height: none !important;
+  }
+}
+
+/* =========================================
+   Mobile drawer fix
+   Fix overlapping text/menu layers in Material drawer on phones.
+   Desktop/tablet product styling remains unchanged.
+   ========================================= */
+@media screen and (max-width: 76.25em) {
+  .md-sidebar--primary {
+    top: var(--md-header-height, 56px) !important;
+    width: min(88vw, 22rem) !important;
+    height: calc(100vh - var(--md-header-height, 56px)) !important;
+    background: #ffffff !important;
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-y: auto !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+
+  .md-sidebar--primary .md-sidebar__inner {
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+
+  .md-nav--primary {
+    background: #ffffff !important;
+    color: #1f2937 !important;
+    font-size: .74rem !important;
+    line-height: 1.45 !important;
+  }
+
+  .md-nav--primary .md-nav {
+    background: #ffffff !important;
+  }
+
+  .md-nav--primary .md-nav__title {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 3 !important;
+    min-height: 3.25rem !important;
+    height: auto !important;
+    padding: .72rem 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: .55rem !important;
+    background: #ffffff !important;
+    color: #111827 !important;
+    box-shadow: 0 1px 0 #e5edf7 !important;
+    white-space: normal !important;
+    overflow: hidden !important;
+    line-height: 1.25 !important;
+  }
+
+  .md-nav--primary .md-nav__title .md-nav__button,
+  .md-nav--primary .md-logo {
+    margin: 0 !important;
+    flex: 0 0 auto !important;
+  }
+
+  .md-nav--primary .md-nav__title .md-logo img,
+  .md-nav--primary .md-nav__title .md-logo svg {
+    height: 30px !important;
+    max-width: 92px !important;
+    object-fit: contain !important;
+  }
+
+  .md-nav--primary .md-nav__source {
+    display: block !important;
+    position: relative !important;
+    min-height: 3.2rem !important;
+    padding: .58rem 1rem .62rem 1rem !important;
+    margin: 0 !important;
+    background: linear-gradient(90deg, #eaf2ff 0%, #dbeafe 100%) !important;
+    color: #0b5cf0 !important;
+    box-shadow: inset 0 -1px 0 #d6e3f5 !important;
+    overflow: hidden !important;
+    line-height: 1.25 !important;
+  }
+
+  .md-nav--primary .md-nav__source .md-source {
+    color: #0b5cf0 !important;
+    display: block !important;
+    max-width: 100% !important;
+  }
+
+  .md-nav--primary .md-nav__source .md-source__repository {
+    max-width: 14rem !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  .md-nav--primary .md-nav__list {
+    padding: .45rem 0 .9rem 0 !important;
+    background: #ffffff !important;
+  }
+
+  .md-nav--primary .md-nav__item {
+    background: #ffffff !important;
+    border-top: 0 !important;
+  }
+
+  .md-nav--primary .md-nav__link {
+    min-height: 2.35rem !important;
+    margin: 0 !important;
+    padding: .56rem 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: .5rem !important;
+    color: #1f2937 !important;
+    background: #ffffff !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    line-height: 1.35 !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .md-nav--primary .md-nav__link:hover {
+    color: #0b5cf0 !important;
+    background: #f3f7ff !important;
   }
 
   .md-nav--primary .md-nav__link--active,
-  .md-sidebar--primary .md-nav__link--active,
-  .md-nav--primary .md-nav__item--active > .md-nav__link,
-  .md-sidebar--primary .md-nav__item--active > .md-nav__link {
-    color: #ffffff !important;
-    font-weight: 800 !important;
+  .md-nav--primary .md-nav__item--active > .md-nav__link {
+    color: #0b5cf0 !important;
+    background: #eaf2ff !important;
+    font-weight: 850 !important;
+    box-shadow: inset 3px 0 0 #0b5cf0 !important;
   }
+
+  .md-nav--primary .md-nav__link .md-ellipsis,
+  .md-nav--secondary .md-nav__link .md-ellipsis {
+    overflow: visible !important;
+    text-overflow: initial !important;
+    white-space: normal !important;
+  }
+
+  .md-sidebar--secondary,
+  .md-sidebar--secondary .md-sidebar__scrollwrap {
+    min-height: 0 !important;
+    max-height: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: #ffffff !important;
+  }
+
+  .md-content__inner {
+    min-height: auto !important;
+    max-height: none !important;
+    border-radius: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+  }
+}
+
+/* =========================================
+   Force TOC collapse in split-screen mode v8
+   Previous fix only used display:none at 1220px, but Material may still
+   reserve sidebar space or the viewport may remain above that breakpoint.
+   This patch hides the right TOC earlier and also removes its layout space.
+   ========================================= */
+@media screen and (max-width: 1700px) {
+  /* Completely remove the right-side table of contents from layout */
+  .md-sidebar--secondary,
+  .md-sidebar--secondary.md-sidebar,
+  .md-sidebar--secondary .md-sidebar__scrollwrap,
+  .md-sidebar--secondary .md-sidebar__inner,
+  .md-sidebar--secondary .md-nav {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    flex: 0 0 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+  }
+
+  /* Remove Material grid/sidebar reserved space */
+  .md-main__inner,
+  .md-main__inner.md-grid {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding-left: clamp(.75rem, 2.4vw, 1.5rem) !important;
+    padding-right: clamp(.75rem, 2.4vw, 1.5rem) !important;
+    display: block !important;
+  }
+
+  .md-content {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .md-content__inner {
+    width: 100% !important;
+    max-width: 1080px !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+    padding: 1.6rem clamp(1rem, 4vw, 2rem) 2.4rem clamp(1rem, 4vw, 2rem) !important;
+  }
+
+  .md-typeset,
+  .md-typeset > * {
+    max-width: 100% !important;
+  }
+}
+
+/* At real phone/tablet widths, make the article use the full screen. */
+@media screen and (max-width: 76.25em) {
+  .md-main__inner,
+  .md-main__inner.md-grid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .md-content__inner {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 1.2rem 1rem 2rem 1rem !important;
+  }
+}
+
+/* =========================================
+   Force left navigation collapse in split-screen mode v9
+   Problem:
+   v8 removed the right TOC, but the left primary navigation could still
+   remain in the layout when the browser is split-screen. This patch removes
+   the left sidebar from normal layout, while preserving the hamburger drawer
+   behavior on tablet/mobile widths.
+   ========================================= */
+
+/* Split-screen / medium desktop: no persistent left sidebar. */
+@media screen and (max-width: 1700px) {
+  .md-sidebar--primary,
+  .md-sidebar--primary.md-sidebar {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    flex: 0 0 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .md-main__inner,
+  .md-main__inner.md-grid {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding-left: clamp(.75rem, 2.4vw, 1.5rem) !important;
+    padding-right: clamp(.75rem, 2.4vw, 1.5rem) !important;
+  }
+
+  .md-content {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .md-content__inner {
+    width: 100% !important;
+    max-width: 1080px !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* Drawer breakpoint: keep the left nav available only when hamburger is opened. */
+@media screen and (max-width: 76.25em) {
+  [data-md-toggle="drawer"]:not(:checked) ~ .md-container .md-sidebar--primary {
+    display: block !important;
+    position: fixed !important;
+    top: var(--md-header-height, 56px) !important;
+    left: 0 !important;
+    width: min(88vw, 22rem) !important;
+    max-width: min(88vw, 22rem) !important;
+    height: calc(100vh - var(--md-header-height, 56px)) !important;
+    transform: translateX(-110%) !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    z-index: 5 !important;
+    background: #ffffff !important;
+    overflow: hidden !important;
+  }
+
+  [data-md-toggle="drawer"]:checked ~ .md-container .md-sidebar--primary {
+    display: block !important;
+    position: fixed !important;
+    top: var(--md-header-height, 56px) !important;
+    left: 0 !important;
+    width: min(88vw, 22rem) !important;
+    max-width: min(88vw, 22rem) !important;
+    height: calc(100vh - var(--md-header-height, 56px)) !important;
+    transform: translateX(0) !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    z-index: 5 !important;
+    background: #ffffff !important;
+    overflow: hidden !important;
+  }
+
+  [data-md-toggle="drawer"]:checked ~ .md-container .md-sidebar--primary .md-sidebar__scrollwrap,
+  [data-md-toggle="drawer"]:not(:checked) ~ .md-container .md-sidebar--primary .md-sidebar__scrollwrap {
+    display: block !important;
+    visibility: visible !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-y: auto !important;
+    background: #ffffff !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  [data-md-toggle="drawer"]:checked ~ .md-container .md-sidebar--primary .md-sidebar__inner,
+  [data-md-toggle="drawer"]:not(:checked) ~ .md-container .md-sidebar--primary .md-sidebar__inner {
+    display: block !important;
+    visibility: visible !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+
+  .md-main__inner,
+  .md-main__inner.md-grid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .md-content__inner {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 1.2rem 1rem 2rem 1rem !important;
+  }
+}
+
+/* =========================================
+   Mobile / split drawer navigation cleanup v10
+   Goals:
+   - Keep homepage sidebar unchanged.
+   - On Material drawer, prevent HighTorque logo from overlapping the page title.
+   - Keep a clear "Back" row when entering a sub-level.
+   - Avoid duplicate active leaf rows such as Hardware -> Hardware.
+   - Keep Reference nav limited to Hardware / Software / Interfaces / Configuration.
+   ========================================= */
+@media screen and (max-width: 76.25em) {
+  /* The drawer itself */
+  [data-md-toggle="drawer"]:checked ~ .md-container .md-sidebar--primary {
+    display: block !important;
+    position: fixed !important;
+    top: var(--md-header-height, 56px) !important;
+    left: 0 !important;
+    width: min(88vw, 22rem) !important;
+    max-width: min(88vw, 22rem) !important;
+    height: calc(100vh - var(--md-header-height, 56px)) !important;
+    transform: translateX(0) !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    z-index: 5 !important;
+    background: #ffffff !important;
+    overflow: hidden !important;
+  }
+
+  [data-md-toggle="drawer"]:not(:checked) ~ .md-container .md-sidebar--primary {
+    display: block !important;
+    position: fixed !important;
+    top: var(--md-header-height, 56px) !important;
+    left: 0 !important;
+    width: min(88vw, 22rem) !important;
+    max-width: min(88vw, 22rem) !important;
+    height: calc(100vh - var(--md-header-height, 56px)) !important;
+    transform: translateX(-110%) !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    z-index: 5 !important;
+    background: #ffffff !important;
+    overflow: hidden !important;
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-y: auto !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+
+  .md-sidebar--primary .md-sidebar__inner,
+  .md-nav--primary,
+  .md-nav--primary .md-nav {
+    background: #ffffff !important;
+  }
+
+  /* Drawer title row: no overlapping logo. */
+  .md-nav--primary .md-nav__title {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 4 !important;
+    min-height: 3.4rem !important;
+    padding: .72rem 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: .55rem !important;
+    background: #ffffff !important;
+    color: #111827 !important;
+    box-shadow: 0 1px 0 #e5edf7 !important;
+    line-height: 1.25 !important;
+    white-space: normal !important;
+    overflow: hidden !important;
+  }
+
+  /* Hide only the logo inside the drawer title to avoid overlap with text. */
+  .md-nav--primary .md-nav__title .md-logo,
+  .md-nav--primary .md-nav__title .md-logo img,
+  .md-nav--primary .md-nav__title .md-logo svg {
+    display: none !important;
+  }
+
+  /* Back/parent button must be visible on sub-level pages. */
+  .md-nav--primary .md-nav__title .md-nav__button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 2rem !important;
+    width: 2rem !important;
+    height: 2rem !important;
+    margin: 0 .25rem 0 0 !important;
+    color: #0b5cf0 !important;
+    opacity: 1 !important;
+  }
+
+  .md-nav--primary .md-nav__source {
+    display: block !important;
+    min-height: 3.1rem !important;
+    padding: .55rem 1rem .62rem 1rem !important;
+    margin: 0 !important;
+    background: linear-gradient(90deg, #eaf2ff 0%, #dbeafe 100%) !important;
+    color: #0b5cf0 !important;
+    box-shadow: inset 0 -1px 0 #d6e3f5 !important;
+    overflow: hidden !important;
+    line-height: 1.25 !important;
+  }
+
+  .md-nav--primary .md-nav__source .md-source__repository {
+    max-width: 14rem !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  .md-nav--primary .md-nav__list {
+    padding: .45rem 0 .9rem 0 !important;
+    background: #ffffff !important;
+  }
+
+  .md-nav--primary .md-nav__item {
+    background: #ffffff !important;
+    border-top: 0 !important;
+  }
+
+  .md-nav--primary .md-nav__link {
+    min-height: 2.35rem !important;
+    margin: 0 !important;
+    padding: .56rem 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: .5rem !important;
+    color: #1f2937 !important;
+    background: #ffffff !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    line-height: 1.35 !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .md-nav--primary .md-nav__link:hover {
+    color: #0b5cf0 !important;
+    background: #f3f7ff !important;
+  }
+
+  .md-nav--primary .md-nav__link--active,
+  .md-nav--primary .md-nav__item--active > .md-nav__link {
+    color: #0b5cf0 !important;
+    background: #eaf2ff !important;
+    font-weight: 850 !important;
+    box-shadow: inset 3px 0 0 #0b5cf0 !important;
+  }
+
+  /* Prevent ellipsis clipping in the drawer. */
+  .md-nav--primary .md-nav__link .md-ellipsis {
+    overflow: visible !important;
+    text-overflow: initial !important;
+    white-space: normal !important;
+  }
+
+  /*
+     Hide the duplicated active leaf item when a sub-level drawer title already
+     shows the same current page title. This fixes Hardware -> Hardware style
+     duplication in narrow/split drawer mode.
+  */
+  .md-nav--primary .md-nav .md-nav__list > .md-nav__item:first-child > .md-nav__link--active,
+  .md-nav--primary .md-nav .md-nav__list > .md-nav__item:first-child > .md-nav__link[aria-current="page"] {
+    display: none !important;
+  }
+}
+
+/* =========================================
+   Strict drawer index structure v11
+   Match homepage index structure in split/mobile drawer.
+   Keep section index titles clickable while avoiding duplicate active leaf rows.
+   ========================================= */
+@media screen and (max-width: 76.25em) {
+  /* Keep page title clear; no logo overlap inside drawer title. */
+  .md-nav--primary .md-nav__title .md-logo,
+  .md-nav--primary .md-nav__title .md-logo img,
+  .md-nav--primary .md-nav__title .md-logo svg {
+    display: none !important;
+  }
+
+  /* Visible back button for sub-levels. */
+  .md-nav--primary .md-nav__title .md-nav__button {
+    display: inline-flex !important;
+    color: #0b5cf0 !important;
+    opacity: 1 !important;
+  }
+
+  /* Hide duplicate active first child shown under its own sub-level title. */
+  .md-nav--primary .md-nav .md-nav__list > .md-nav__item:first-child > .md-nav__link--active,
+  .md-nav--primary .md-nav .md-nav__list > .md-nav__item:first-child > .md-nav__link[aria-current="page"] {
+    display: none !important;
+  }
+
+  /* Consistent light-blue active state. */
+  .md-nav--primary .md-nav__link--active,
+  .md-nav--primary .md-nav__item--active > .md-nav__link {
+    color: #0b5cf0 !important;
+    background: #eaf2ff !important;
+    font-weight: 850 !important;
+    box-shadow: inset 3px 0 0 #0b5cf0 !important;
+  }
+}
+
+/* =========================================
+   Logo + drawer Home link v12
+   ========================================= */
+
+/* New uploaded logo is wider; keep it readable in the top header. */
+.md-logo img,
+.md-logo svg {
+  max-width: 150px !important;
+  height: 36px !important;
+  object-fit: contain !important;
+}
+
+/* In narrow drawer title, hide logo to avoid overlap with page title. */
+@media screen and (max-width: 76.25em) {
+  .md-nav--primary .md-nav__title .md-logo,
+  .md-nav--primary .md-nav__title .md-logo img,
+  .md-nav--primary .md-nav__title .md-logo svg {
+    display: none !important;
+  }
+
+  .ht-drawer-home-link {
+    display: flex !important;
+    align-items: center !important;
+    gap: .55rem !important;
+    min-height: 2.55rem !important;
+    padding: .62rem 1rem !important;
+    color: #0b5cf0 !important;
+    background: #f3f7ff !important;
+    border-bottom: 1px solid #dbeafe !important;
+    font-weight: 850 !important;
+    line-height: 1.3 !important;
+    text-decoration: none !important;
+  }
+
+  .ht-drawer-home-link:hover {
+    background: #eaf2ff !important;
+    color: #064fd8 !important;
+  }
+
+  .ht-drawer-home-arrow {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 1.35rem !important;
+    height: 1.35rem !important;
+    border-radius: 999px !important;
+    background: rgba(11,92,240,.10) !important;
+    color: #0b5cf0 !important;
+    font-weight: 900 !important;
+  }
+}
+
+/* =========================================
+   Drawer Home link visibility v13
+   The injected "← Home" links are hidden on full-width desktop and only
+   displayed when the browser is in split-screen/drawer width.
+   ========================================= */
+.ht-drawer-home-link {
+  display: none !important;
+}
+
+@media screen and (max-width: 1220px) {
+  .ht-drawer-home-link {
+    display: flex !important;
+    align-items: center !important;
+    gap: .55rem !important;
+    min-height: 2.55rem !important;
+    padding: .62rem 1rem !important;
+    color: #0b5cf0 !important;
+    background: #f3f7ff !important;
+    border-bottom: 1px solid #dbeafe !important;
+    font-weight: 850 !important;
+    line-height: 1.3 !important;
+    text-decoration: none !important;
+  }
+
+  .ht-drawer-home-link:hover {
+    background: #eaf2ff !important;
+    color: #064fd8 !important;
+  }
+
+  .ht-drawer-home-arrow {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 1.35rem !important;
+    height: 1.35rem !important;
+    border-radius: 999px !important;
+    background: rgba(11,92,240,.10) !important;
+    color: #0b5cf0 !important;
+    font-weight: 900 !important;
+  }
+}
+
+/* =========================================
+   Header logo external link v14
+   ========================================= */
+.md-header .md-logo {
+  cursor: pointer;
 }

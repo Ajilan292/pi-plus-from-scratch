@@ -1,6 +1,6 @@
 # Reference Documentation
 
-This section contains technical reference documentation for the PI Plus robot system.
+This section contains technical reference documentation for the Mini Pi plus robot system.
 
 ## Categories
 

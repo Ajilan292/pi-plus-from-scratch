@@ -56,7 +56,7 @@ Two available approaches:
 
 ### PBHC (Legacy Path)
 
-Used in Mini Pi Plus baseline:
+Used in Mini Pi plus baseline:
 
 - Motion retargeting
 - Contact labeling

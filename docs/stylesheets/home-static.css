@@ -932,3 +932,223 @@ a {
     width: 112px;
   }
 }
+
+/* =========================================
+   Homepage content suggestions v14
+   Based on the submitted modification notes.
+   ========================================= */
+
+/* Logo should be clickable and visually stable. */
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  line-height: 0;
+}
+
+.brand-link:hover {
+  opacity: .92;
+}
+
+/* New title is shorter; keep it in two balanced lines. */
+.hero-copy {
+  width: min(900px, 58vw);
+}
+
+.hero h1 {
+  font-size: clamp(44px, 4.05vw, 72px);
+  line-height: 1.06;
+  max-width: 900px;
+  letter-spacing: -.052em;
+}
+
+/* Right metric block: less blank space, closer to the reference poster. */
+.price-card {
+  width: 245px;
+  padding: 12px 14px 14px 14px;
+}
+
+.price-card i {
+  margin: 12px 0 12px 0;
+}
+
+.price-card em {
+  font-size: clamp(25px, 2vw, 32px);
+  margin-bottom: 14px;
+  white-space: nowrap;
+}
+
+.price-card p {
+  font-size: clamp(14px, 1vw, 17px);
+  line-height: 1.38;
+}
+
+/* Four core feature blocks: poster-style title only. */
+.feature-strip {
+  height: 96px;
+}
+
+.feature-title-only {
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 18px;
+}
+
+.feature-title-only h3 {
+  margin: 0;
+  font-size: clamp(16px, 1.05vw, 20px);
+  line-height: 1.12;
+  font-weight: 920;
+  color: #0f172a;
+  white-space: normal;
+}
+
+.feature-title-only p {
+  display: none !important;
+}
+
+.svg-icon svg {
+  width: 34px;
+  height: 34px;
+  display: block;
+}
+
+.svg-icon svg path {
+  fill: none;
+  stroke: #0b5cf0;
+  stroke-width: 2.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Learning resource cards: smaller numbers and wider readable text. */
+.resource-card {
+  grid-template-columns: 48px minmax(150px, 1fr);
+  gap: 14px;
+  padding: 24px 24px;
+}
+
+.resource-card > span {
+  font-size: 30px;
+  letter-spacing: -.035em;
+}
+
+.resource-card h3 {
+  white-space: nowrap;
+  font-size: 15px;
+}
+
+.resource-card p {
+  max-width: 20em;
+}
+
+@media (max-width: 1280px) {
+  .hero-copy {
+    width: min(760px, 60vw);
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 4.6vw, 60px);
+  }
+
+  .price-card {
+    right: 34px;
+    width: 230px;
+  }
+
+  .resource-card {
+    grid-template-columns: 44px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 1080px) {
+  .hero-copy {
+    width: min(760px, 66vw);
+  }
+
+  .price-card {
+    display: none;
+  }
+
+  .feature-strip {
+    height: auto;
+  }
+
+  .feature-title-only {
+    height: 92px;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero h1 {
+    font-size: clamp(36px, 11vw, 54px);
+  }
+
+  .resource-card h3 {
+    white-space: normal;
+  }
+}
+
+/* =========================================
+   Feature strip icon removal v15
+   The four homepage feature blocks are title-only, no icon/emoji before text.
+   ========================================= */
+.feature-strip .feature,
+.feature-strip .feature-title-only {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  grid-template-columns: none !important;
+  gap: 0 !important;
+  text-align: center !important;
+  padding: 0 clamp(18px, 2.6vw, 46px) !important;
+}
+
+.feature-strip .feature-icon,
+.feature-strip .svg-icon {
+  display: none !important;
+}
+
+.feature-strip .feature h3,
+.feature-strip .feature-title-only h3 {
+  margin: 0 !important;
+  font-size: clamp(17px, 1.1vw, 22px) !important;
+  line-height: 1.12 !important;
+  font-weight: 920 !important;
+  color: #0f172a !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 1080px) {
+  .feature-strip .feature,
+  .feature-strip .feature-title-only {
+    justify-content: flex-start !important;
+    text-align: left !important;
+    padding: 0 28px !important;
+  }
+
+  .feature-strip .feature h3,
+  .feature-strip .feature-title-only h3 {
+    white-space: normal !important;
+  }
+}
+
+/* =========================================
+   Product naming and no-wrap title v16
+   ========================================= */
+.no-wrap {
+  white-space: nowrap;
+}
+
+.hero h1 .no-wrap {
+  white-space: nowrap;
+}
+
+.price-card strong .no-wrap {
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .hero h1 .no-wrap {
+    white-space: normal;
+  }
+}

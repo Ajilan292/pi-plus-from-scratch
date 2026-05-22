@@ -1,6 +1,6 @@
 # Setup
 
-This section describes how to prepare the PI Plus robot software environment for the ROS2-based deployment workflow.
+This section describes how to prepare the Mini Pi plus robot software environment for the ROS2-based deployment workflow.
 
 It focuses on:
 
@@ -15,11 +15,11 @@ This page does **not** include internal repository links or private development 
 
 ## Overview
 
-The ROS2 deployment workflow on PI Plus requires preparation on the robot side before bringup and policy execution.
+The ROS2 deployment workflow on Mini Pi plus requires preparation on the robot side before bringup and policy execution.
 
 The target robot configuration used in this setup is:
 
-- **Robot**: PI Plus
+- **Robot**: Mini Pi plus
 - **Platform**: Orin NX
 - **Camera**: RealSense D435i
 
@@ -39,7 +39,7 @@ A complete setup typically includes:
 
 Before starting, make sure you have:
 
-- A PI Plus robot powered on and reachable over the network
+- A Mini Pi plus robot powered on and reachable over the network
 - SSH access to the robot
 - Administrator privileges on the robot
 - Required deployment packages prepared locally

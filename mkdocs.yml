@@ -1,5 +1,5 @@
-site_name: PI Plus From Scratch
-site_description: Complete guide for learning PI Plus robot from scratch
+site_name: Mini Pi plus From Scratch
+site_description: Complete guide for learning Mini Pi plus robot from scratch
 site_url: http://127.0.0.1:8082/pi-plus-from-scratch/
 repo_url: https://github.com/Ajilan292/pi-plus-from-scratch
 repo_name: Ajilan292/pi-plus-from-scratch
@@ -10,8 +10,6 @@ theme:
   logo: assets/ht-logo-trademark.png
   favicon: assets/ht-logo-trademark.png
   language: en
-  logo: assets/logo.png
-  favicon: assets/logo.png
   palette:
     - scheme: default
       primary: indigo

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document records the release history, major updates, improvements, and known issues of the PI Plus platform.
+This document records the release history, major updates, improvements, and known issues of the Mini Pi plus platform.
 
 Each release follows a structured format to ensure traceability and clarity for developers and users.
 
@@ -26,7 +26,7 @@ MAJOR.MINOR.PATCH
 
 ### Highlights
 
-- First stable release of PI Plus platform 
+- First stable release of Mini Pi plus platform 
 - Full configuration-driven architecture 
 - Joint-centric control model implemented 
 - CAN-FD based motor communication supported 
@@ -119,7 +119,7 @@ If you find issues or want to contribute:
 
 ## Summary
 
-This release establishes the foundation of the PI Plus platform:
+This release establishes the foundation of the Mini Pi plus platform:
 
 - Modular 
 - Configurable 

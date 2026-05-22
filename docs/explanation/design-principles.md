@@ -2,7 +2,7 @@
 
 ## Overview
 
-The PI Plus platform is not designed as a single-purpose robot system, but as a **generalizable robotics platform** that supports:
+The Mini Pi plus platform is not designed as a single-purpose robot system, but as a **generalizable robotics platform** that supports:
 
 - Multiple hardware configurations 
 - Scalable control architectures 
@@ -332,7 +332,7 @@ The design aligns with current trends in robotics:
 ### From Monolithic → Modular
 
 - Old systems: tightly coupled 
-- PI Plus: layered architecture 
+- Mini Pi plus: layered architecture 
 
 ### From Hardware-Centric → Interface-Centric
 
@@ -353,7 +353,7 @@ The design aligns with current trends in robotics:
 
 ## Summary
 
-The PI Plus platform is built on the following core ideas:
+The Mini Pi plus platform is built on the following core ideas:
 
 - **Decouple everything that can be decoupled**
 - **Use configuration instead of hardcoding**

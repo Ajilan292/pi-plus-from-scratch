@@ -2,7 +2,7 @@
 
 ## Overview
 
-The PI Plus software system is built on ROS2 and follows a modular, layered architecture. Each layer has a clearly defined responsibility, enabling flexibility, scalability, and safe control.
+The Mini Pi plus software system is built on ROS2 and follows a modular, layered architecture. Each layer has a clearly defined responsibility, enabling flexibility, scalability, and safe control.
 
 The system is composed of the following layers:
 
@@ -20,7 +20,7 @@ The key design principle of the software system is:
 
 ## System Architecture
 
-The PI Plus software stack can be understood as a layered runtime pipeline:
+The Mini Pi plus software stack can be understood as a layered runtime pipeline:
 
 ```text
 [ Teleoperation / Policy / Script ]
@@ -512,7 +512,7 @@ This makes the stack suitable not only for operation, but also for platform-leve
 
 ## Summary
 
-The PI Plus software system provides:
+The Mini Pi plus software system provides:
 
 - A layered architecture
 - Unified control through middleware abstraction

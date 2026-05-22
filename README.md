@@ -1,10 +1,10 @@
-# PI Plus Documentation - Desktop Copy
+# Mini Pi plus Documentation - Desktop Copy
 
-This is a clean copy of the PI Plus documentation project, created on 2026-03-27.
+This is a clean copy of the Mini Pi plus documentation project, created on 2026-03-27.
 
 ## Project Overview
 
-Complete documentation system for PI Plus humanoid robot platform, featuring:
+Complete documentation system for Mini Pi plus humanoid robot platform, featuring:
 
 - **Modern UI**: Card-based layout with background image
 - **Complete Tutorials**: 8 modules from setup to deployment
@@ -103,7 +103,7 @@ The following files were excluded from this copy:
 
 ## License
 
-This documentation is part of the PI Plus project.
+This documentation is part of the Mini Pi plus project.
 
 ---
 
@@ -253,3 +253,36 @@ The homepage sidebar uses clickable section titles. The MkDocs navigation was re
 ### Drawer Home link visibility v13
 
 The injected `← Home` link is now only created and shown at split-screen / drawer widths (`max-width: 1220px`). On full-width desktop, the extra `← Home` links are removed and hidden, so the normal sidebar stays clean.
+
+
+### Homepage content suggestions v14
+
+Applied the latest submitted content modification notes:
+- linked the top-left company logo to `https://www.hightorquerobotics.com/`;
+- changed the hero title to `Mini Pi plus: Your Research-Grade Humanoid`;
+- changed the right-side price text to `75.6cm / 15kg` and reduced vertical blank space;
+- replaced the four feature blocks with poster-style title-only blocks:
+  `High Performance`, `Full Ecosystem`, `Lightweight`, `Expandable Infra`;
+- reduced Learning Resources number size and adjusted card text width to avoid one-word lines.
+
+
+### Feature strip icon removal v15
+
+Removed the icon/SVG blocks before the four homepage feature titles:
+`High Performance`, `Full Ecosystem`, `Lightweight`, and `Expandable Infra`.
+The feature strip is now title-only and center-aligned on desktop.
+
+
+### Product naming update v16
+
+- Standardized visible product naming across the project:
+  - `PI Plus` / `Pi Plus` -> `Mini Pi plus`
+  - standalone `PI` -> `Pi`
+- Updated the homepage hero title to `Mini Pi plus: Your Research-Grade Humanoid`.
+- Kept `Research-Grade Humanoid` on one line in the hero and right-side label where viewport width allows.
+
+
+### Product naming deduplication v17
+
+Fixed accidental duplicated product names such as `Mini Mini Pi plus robot`.
+The standardized visible product name remains `Mini Pi plus`.

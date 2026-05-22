@@ -1,191 +1,140 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PI Plus From Scratch</title>
-  <link rel="icon" href="assets/ht-logo-trademark.png" />
-  <link rel="stylesheet" href="stylesheets/home-static.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Mini Pi plus: Your Research-Grade Humanoid</title>
+<link href="assets/ht-logo-trademark.png" rel="icon"/>
+<link href="stylesheets/home-static.css" rel="stylesheet"/>
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar-left">
-      <img src="assets/ht-logo-trademark.png" alt="HighTorque" class="brand-logo" />
-      <div class="site-title">PI Plus From Scratch</div>
-    </div>
-
-    <label class="search-box" aria-label="Search">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.8 4a6.8 6.8 0 0 1 5.38 10.96l3.43 3.43-1.42 1.42-3.43-3.43A6.8 6.8 0 1 1 10.8 4Zm0 2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6Z"/></svg>
-      <input placeholder="Search tutorials, guides..." />
-      <span class="search-chevron">⌄</span>
-    </label>
-
-    <a class="repo-link" href="https://github.com/Ajilan292/pi-plus-from-scratch" aria-label="Repository">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 3 7.2v9.6L12 22l9-5.2V7.2L12 2Zm0 2.3 5.05 2.92L12 10.14 6.95 7.22 12 4.3ZM5 8.96l6 3.47v6.64l-6-3.46V8.96Zm14 6.65-6 3.46v-6.64l6-3.47v6.65Z"/></svg>
-      <span>Ajilan292 / pi-plus-from-scratch</span>
-      <span class="repo-chevron">⌄</span>
-    </a>
-  </header>
-
-  <div class="layout">
-    <aside class="sidebar">
-      <nav class="sidebar-card">
-        <div class="nav-title">PI Plus From Scratch</div>
-
-        <a class="nav-item nav-root active" href="./">
-          <span class="nav-ico">⌂</span><span>Home</span>
-        </a>
-        <a class="nav-item nav-child" href="get-started/">
-          <span class="nav-ico"></span><span>Get Started</span>
-        </a>
-
-        <a class="nav-section nav-section-link" href="tutorials/intro/">Tutorials</a>
-        <a class="nav-item nav-child" href="tutorials/first-run/"><span class="nav-ico"></span><span>First Run</span></a>
-        <a class="nav-item nav-child" href="tutorials/setup/"><span class="nav-ico"></span><span>Setup</span></a>
-        <a class="nav-item nav-child" href="tutorials/safety-and-teleop/"><span class="nav-ico"></span><span>Safety &amp; Teleoperation</span></a>
-        <a class="nav-item nav-child" href="tutorials/bringup/"><span class="nav-ico"></span><span>Bringup</span></a>
-        <a class="nav-item nav-child" href="tutorials/sim-basics/"><span class="nav-ico"></span><span>Simulation Basics</span></a>
-        <a class="nav-item nav-child" href="tutorials/sim2real-deploy/"><span class="nav-ico"></span><span>Sim2Real Deployment</span></a>
-        <a class="nav-item nav-child" href="tutorials/troubleshooting/"><span class="nav-ico"></span><span>Troubleshooting</span></a>
-
-        <a class="nav-section nav-section-link" href="reference/">Reference</a>
-        <a class="nav-item nav-child" href="reference/hardware/"><span class="nav-ico"></span><span>Hardware</span></a>
-        <a class="nav-item nav-child" href="reference/software/"><span class="nav-ico"></span><span>Software</span></a>
-        <a class="nav-item nav-child" href="reference/interfaces/"><span class="nav-ico"></span><span>Interfaces</span></a>
-        <a class="nav-item nav-child" href="reference/configuration/"><span class="nav-ico"></span><span>Configuration</span></a>
-
-        <a class="nav-section nav-section-link" href="explanation/sim2real/">Explanation</a>
-        <a class="nav-item nav-child" href="explanation/sim2real/"><span class="nav-ico"></span><span>Sim2Real Theory</span></a>
-        <a class="nav-item nav-child" href="explanation/design-principles/"><span class="nav-ico"></span><span>Design Principles</span></a>
-
-        <a class="nav-section nav-section-link" href="changelogs/releases/">Changelogs</a>
-        <a class="nav-item nav-child" href="changelogs/releases/"><span class="nav-ico"></span><span>Releases</span></a>
-
-        <a class="github-card" href="https://github.com/Ajilan292/pi-plus-from-scratch">
-          <span class="github-dot">
-            <svg viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.8 23.38c.6.1.82-.26.82-.58v-2.2c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.34-1.75-1.34-1.75-1.1-.75.08-.73.08-.73 1.22.08 1.86 1.25 1.86 1.25 1.08 1.85 2.84 1.32 3.54 1 .1-.78.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.94 0-1.32.47-2.4 1.24-3.24-.12-.3-.54-1.54.12-3.2 0 0 1.02-.33 3.3 1.24a11.4 11.4 0 0 1 6 0c2.28-1.57 3.3-1.24 3.3-1.24.66 1.66.24 2.9.12 3.2.78.84 1.24 1.92 1.24 3.24 0 4.62-2.8 5.64-5.48 5.94.44.38.82 1.12.82 2.26v3.36c0 .32.22.7.84.58A12 12 0 0 0 12 .5Z"/></svg>
-          </span>
-          <span>
-            <b>Star on GitHub</b>
-            <small>Support the project</small>
-          </span>
-        </a>
-      </nav>
-    </aside>
-
-    <main class="content">
-      <section class="hero">
-        <div class="hero-bg" aria-hidden="true"></div>
-
-        <div class="hero-copy">
-          <div class="badge">PI Plus From Scratch</div>
-          <h1>PI Plus: Your Desktop<br />Humanoid Companion</h1>
-          <div class="blue-line"></div>
-          <p>Complete guide for learning PI Plus robot<br />from scratch to real-world deployment.</p>
-
-          <div class="hero-actions">
-            <a class="btn primary" href="get-started/">Get Started <span>→</span></a>
-            <a class="btn secondary" href="tutorials/intro/">View Tutorials</a>
-          </div>
-
-          <div class="hero-tags">
-            <span>🎓 Beginner Friendly</span>
-            <span>⌘ Open Source</span>
-            <span>👥 Active Community</span>
-          </div>
-        </div>
-
-        <div class="price-card">
-          <strong>Research-Grade</strong>
-          <b>Open-Source Humanoid</b>
-          <i></i>
-          <em>From $5,500</em>
-          <p>Built for research.<br />Open to the core.<br />Ready for real-world<br />exploration.</p>
-        </div>
-      </section>
-
-      <section class="feature-strip" aria-label="PI Plus features">
-        <article class="feature">
-          <div class="feature-icon icon-blue">▣</div>
-          <div>
-            <h3>Desktop Platform</h3>
-            <p>Compact desktop humanoid robot perfect for education and research.</p>
-          </div>
-        </article>
-
-        <article class="feature">
-          <div class="feature-icon">⬡</div>
-          <div>
-            <h3>Modular Design</h3>
-            <p>Hardware and software modules that can be replaced and extended.</p>
-          </div>
-        </article>
-
-        <article class="feature">
-          <div class="feature-icon">ϟ</div>
-          <div>
-            <h3>High Performance</h3>
-            <p>Stable operation with reproducible results and observable metrics.</p>
-          </div>
-        </article>
-
-        <article class="feature">
-          <div class="feature-icon shield">◆</div>
-          <div>
-            <h3>ROS Ecosystem</h3>
-            <p>Full ROS1 compatibility with clear documentation and examples.</p>
-          </div>
-        </article>
-      </section>
-
-      <section class="resources">
-        <div class="section-head">
-          <div>
-            <h2>Learning Resources</h2>
-            <div class="section-line"></div>
-          </div>
-          <a href="get-started/">View all resources →</a>
-        </div>
-
-        <div class="resource-grid">
-          <a class="resource-card" href="get-started/">
-            <span>01</span>
-            <div>
-              <h3>Get Started</h3>
-              <p>Quick start guide and environment setup</p>
-              <b>Start Now →</b>
-            </div>
-          </a>
-
-          <a class="resource-card" href="tutorials/intro/">
-            <span>02</span>
-            <div>
-              <h3>Tutorials</h3>
-              <p>Step-by-step tutorials from basic to advanced</p>
-              <b>Browse Tutorials →</b>
-            </div>
-          </a>
-
-          <a class="resource-card" href="tutorials/sim-basics/">
-            <span>03</span>
-            <div>
-              <h3>Simulation</h3>
-              <p>Learn simulation basics and test your setup</p>
-              <b>Explore Simulation →</b>
-            </div>
-          </a>
-
-          <a class="resource-card" href="tutorials/sim2real-deploy/">
-            <span>04</span>
-            <div>
-              <h3>Deployment</h3>
-              <p>Deploy to real robot and beyond</p>
-              <b>View Guides →</b>
-            </div>
-          </a>
-        </div>
-      </section>
-    </main>
-  </div>
+<header class="topbar">
+<div class="topbar-left">
+<a class="brand-link" href="https://www.hightorquerobotics.com/" rel="noopener noreferrer" target="_blank"><img alt="HighTorque" class="brand-logo" src="assets/ht-logo-trademark.png"/></a>
+<div class="site-title">Mini Pi plus From Scratch</div>
+</div>
+<label aria-label="Search" class="search-box">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M10.8 4a6.8 6.8 0 0 1 5.38 10.96l3.43 3.43-1.42 1.42-3.43-3.43A6.8 6.8 0 1 1 10.8 4Zm0 2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6Z"></path></svg>
+<input placeholder="Search tutorials, guides..."/>
+<span class="search-chevron">⌄</span>
+</label>
+<a aria-label="Repository" class="repo-link" href="https://github.com/Ajilan292/pi-plus-from-scratch">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2 3 7.2v9.6L12 22l9-5.2V7.2L12 2Zm0 2.3 5.05 2.92L12 10.14 6.95 7.22 12 4.3ZM5 8.96l6 3.47v6.64l-6-3.46V8.96Zm14 6.65-6 3.46v-6.64l6-3.47v6.65Z"></path></svg>
+<span>Ajilan292 / pi-plus-from-scratch</span>
+<span class="repo-chevron">⌄</span>
+</a>
+</header>
+<div class="layout">
+<aside class="sidebar">
+<nav class="sidebar-card">
+<div class="nav-title">Mini Pi plus From Scratch</div>
+<a class="nav-item nav-root active" href="./">
+<span class="nav-ico">⌂</span><span>Home</span>
+</a>
+<a class="nav-item nav-child" href="get-started/">
+<span class="nav-ico"></span><span>Get Started</span>
+</a>
+<a class="nav-section nav-section-link" href="tutorials/intro/">Tutorials</a>
+<a class="nav-item nav-child" href="tutorials/first-run/"><span class="nav-ico"></span><span>First Run</span></a>
+<a class="nav-item nav-child" href="tutorials/setup/"><span class="nav-ico"></span><span>Setup</span></a>
+<a class="nav-item nav-child" href="tutorials/safety-and-teleop/"><span class="nav-ico"></span><span>Safety &amp; Teleoperation</span></a>
+<a class="nav-item nav-child" href="tutorials/bringup/"><span class="nav-ico"></span><span>Bringup</span></a>
+<a class="nav-item nav-child" href="tutorials/sim-basics/"><span class="nav-ico"></span><span>Simulation Basics</span></a>
+<a class="nav-item nav-child" href="tutorials/sim2real-deploy/"><span class="nav-ico"></span><span>Sim2Real Deployment</span></a>
+<a class="nav-item nav-child" href="tutorials/troubleshooting/"><span class="nav-ico"></span><span>Troubleshooting</span></a>
+<a class="nav-section nav-section-link" href="reference/">Reference</a>
+<a class="nav-item nav-child" href="reference/hardware/"><span class="nav-ico"></span><span>Hardware</span></a>
+<a class="nav-item nav-child" href="reference/software/"><span class="nav-ico"></span><span>Software</span></a>
+<a class="nav-item nav-child" href="reference/interfaces/"><span class="nav-ico"></span><span>Interfaces</span></a>
+<a class="nav-item nav-child" href="reference/configuration/"><span class="nav-ico"></span><span>Configuration</span></a>
+<a class="nav-section nav-section-link" href="explanation/sim2real/">Explanation</a>
+<a class="nav-item nav-child" href="explanation/sim2real/"><span class="nav-ico"></span><span>Sim2Real Theory</span></a>
+<a class="nav-item nav-child" href="explanation/design-principles/"><span class="nav-ico"></span><span>Design Principles</span></a>
+<a class="nav-section nav-section-link" href="changelogs/releases/">Changelogs</a>
+<a class="nav-item nav-child" href="changelogs/releases/"><span class="nav-ico"></span><span>Releases</span></a>
+<a class="github-card" href="https://github.com/Ajilan292/pi-plus-from-scratch">
+<span class="github-dot">
+<svg viewbox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.8 23.38c.6.1.82-.26.82-.58v-2.2c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.34-1.75-1.34-1.75-1.1-.75.08-.73.08-.73 1.22.08 1.86 1.25 1.86 1.25 1.08 1.85 2.84 1.32 3.54 1 .1-.78.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.94 0-1.32.47-2.4 1.24-3.24-.12-.3-.54-1.54.12-3.2 0 0 1.02-.33 3.3 1.24a11.4 11.4 0 0 1 6 0c2.28-1.57 3.3-1.24 3.3-1.24.66 1.66.24 2.9.12 3.2.78.84 1.24 1.92 1.24 3.24 0 4.62-2.8 5.64-5.48 5.94.44.38.82 1.12.82 2.26v3.36c0 .32.22.7.84.58A12 12 0 0 0 12 .5Z"></path></svg>
+</span>
+<span>
+<b>Star on GitHub</b>
+<small>Support the project</small>
+</span>
+</a>
+</nav>
+</aside>
+<main class="content">
+<section class="hero">
+<div aria-hidden="true" class="hero-bg"></div>
+<div class="hero-copy">
+<div class="badge">Mini Pi plus From Scratch</div>
+<h1>Mini Pi plus: Your<br/><span class="no-wrap">Research-Grade Humanoid</span></h1>
+<div class="blue-line"></div>
+<p>Complete guide for learning Mini Pi plus robot<br/>from scratch to real-world deployment.</p>
+<div class="hero-actions">
+<a class="btn primary" href="get-started/">Get Started <span>→</span></a>
+<a class="btn secondary" href="tutorials/intro/">View Tutorials</a>
+</div>
+<div class="hero-tags">
+<span>🎓 Beginner Friendly</span>
+<span>⌘ Open Source</span>
+<span>👥 Active Community</span>
+</div>
+</div>
+<div class="price-card">
+<strong><span class="no-wrap">Research-Grade Humanoid</span></strong>
+<b>Open-Source</b>
+<i></i>
+<em>75.6cm / 15kg</em>
+<p>Built for research.<br/>Open to the core.<br/>Ready for real-world<br/>exploration.</p>
+</div>
+</section>
+<section aria-label="Mini Pi plus features" class="feature-strip"><article class="feature feature-title-only"><div><h3>High Performance</h3></div></article><article class="feature feature-title-only"><div><h3>Full Ecosystem</h3></div></article><article class="feature feature-title-only"><div><h3>Lightweight</h3></div></article><article class="feature feature-title-only"><div><h3>Expandable Infra</h3></div></article></section>
+<section class="resources">
+<div class="section-head">
+<div>
+<h2>Learning Resources</h2>
+<div class="section-line"></div>
+</div>
+<a href="get-started/">View all resources →</a>
+</div>
+<div class="resource-grid">
+<a class="resource-card" href="get-started/">
+<span>01</span>
+<div>
+<h3>Get Started</h3>
+<p>Quick start guide and environment setup</p>
+<b>Start Now →</b>
+</div>
+</a>
+<a class="resource-card" href="tutorials/intro/">
+<span>02</span>
+<div>
+<h3>Tutorials</h3>
+<p>Step-by-step tutorials from basic to advanced</p>
+<b>Browse Tutorials →</b>
+</div>
+</a>
+<a class="resource-card" href="tutorials/sim-basics/">
+<span>03</span>
+<div>
+<h3>Simulation</h3>
+<p>Learn simulation basics and test your setup</p>
+<b>Explore Simulation →</b>
+</div>
+</a>
+<a class="resource-card" href="tutorials/sim2real-deploy/">
+<span>04</span>
+<div>
+<h3>Deployment</h3>
+<p>Deploy to real robot and beyond</p>
+<b>View Guides →</b>
+</div>
+</a>
+</div>
+</section>
+</main>
+</div>
 </body>
 </html>

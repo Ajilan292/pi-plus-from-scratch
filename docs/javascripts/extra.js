@@ -85,3 +85,23 @@
   setTimeout(insertDrawerHomeLinks, 250);
   setTimeout(insertDrawerHomeLinks, 900);
 })();
+
+
+/* =========================================
+   Header logo external link v14
+   The logo in normal MkDocs Material pages points to the English company site.
+   ========================================= */
+(function () {
+  function setLogoLink() {
+    document.querySelectorAll(".md-header .md-logo").forEach(function (logo) {
+      logo.setAttribute("href", "https://www.hightorquerobotics.com/");
+      logo.setAttribute("target", "_blank");
+      logo.setAttribute("rel", "noopener noreferrer");
+      logo.setAttribute("aria-label", "HighTorque Robotics");
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", setLogoLink);
+  document.addEventListener("navigation", setLogoLink);
+  setTimeout(setLogoLink, 250);
+})();
