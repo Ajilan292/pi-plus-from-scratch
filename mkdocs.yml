@@ -10,6 +10,8 @@ theme:
   logo: assets/ht-logo-trademark.png
   favicon: assets/ht-logo-trademark.png
   language: en
+  logo: assets/logo.png
+  favicon: assets/logo.png
   palette:
     - scheme: default
       primary: indigo
