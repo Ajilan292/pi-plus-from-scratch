@@ -15,7 +15,6 @@ theme:
       primary: indigo
       accent: indigo
   features:
-    # 不要顶部 tabs（关键）
     - navigation.sections
     - navigation.indexes
     - content.code.copy
